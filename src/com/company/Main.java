@@ -22,10 +22,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BufferedImage bimg;
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
+        System.out.println(width);
+        System.out.println(height);
+
         Window game = new Window("Help the Penguin",width, height, width/2, height/2 );
 
         try
@@ -42,35 +44,25 @@ public class Main {
         mainPanel.setVisible(true);
 
         JButton food = new JButton();
+        JButton sleep = new JButton();
+        JButton friend = new JButton();
+        JButton penguin = new JButton();
 
-        try
-        {
-            //Image img = ImageIO.read(new File("C:/Users/Ola/Desktop/pizza.jpg"));
-            bimg = ImageIO.read(new File("D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/happy_penguin.png"));
-            int imagewidth = bimg.getWidth();
-            int imageheight= bimg.getHeight();
-            //food.setBackground(Color.black);
-            food.setSize(imagewidth,imageheight);
-            food.setIcon(new ImageIcon(bimg));
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
+        game.ButtonImage(food, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/PNG/Eggs.png",1300,0);
+        game.ButtonImage(sleep,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/SleepCloud.png",1300,220);
+        game.ButtonImage(friend,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/Panda.png",1300,440);
+        game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,200);
 
-        food.setOpaque(false);
-        food.setContentAreaFilled(false);
-        food.setBorderPainted(false);
 
         //food.setIcon(new ImageIcon(Class.class.getResource("C:/Users/Ola/Desktop/pizza.jpg")));
 
         //game.add(mainPanel,BorderLayout.CENTER);
         game.setVisible(true);
 
-        game.add(food, BorderLayout.CENTER);
+        game.add(food);
+        game.add(sleep);
+        game.add(friend);
+        game.add(penguin);
         game.setVisible(true);
-        food.setVisible(true);
-
-
     }
 }

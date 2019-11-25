@@ -1,8 +1,14 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class Window extends JFrame {
+
+    BufferedImage bimg;
 
     Window(String nazwa, double width, double height, double xcenter, double ycenter)
     {
@@ -12,6 +18,31 @@ public class Window extends JFrame {
         setResizable(false);
         setSize(width2,height2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    public void ButtonImage(JButton b, String file, int layoutX, int layoutY)
+    {
+        try
+        {
+            //Image img = ImageIO.read(new File("C:/Users/Ola/Desktop/pizza.jpg"));
+            bimg = ImageIO.read(new File(file));
+            int imagewidth = bimg.getWidth();
+            int imageheight= bimg.getHeight();
+            //food.setBackground(Color.black);
+            b.setSize(imagewidth,imageheight);
+            b.setIcon(new ImageIcon(bimg));
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        b.setOpaque(false);
+        b.setContentAreaFilled(false);
+        b.setBorderPainted(false);
+        b.setLocation(new Point(layoutX,layoutY));
+        b.setVisible(true);
 
     }
 }
