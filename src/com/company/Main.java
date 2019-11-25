@@ -51,7 +51,7 @@ public class Main {
         game.ButtonImage(food, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/PNG/Eggs.png",1300,0);
         game.ButtonImage(sleep,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/SleepCloud.png",1300,220);
         game.ButtonImage(friend,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/Panda.png",1300,440);
-        game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,200);
+        game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,230);
 
 
         //food.setIcon(new ImageIcon(Class.class.getResource("C:/Users/Ola/Desktop/pizza.jpg")));
