@@ -21,7 +21,7 @@ public class Window extends JFrame {
 
     }
 
-    public void ButtonImage(JButton b, String file, int layoutX, int layoutY)
+    public void ButtonImage(JButton b, String file, int layoutX, int layoutY, boolean ramka)
     {
         try
         {
@@ -40,7 +40,7 @@ public class Window extends JFrame {
 
         b.setOpaque(false);
         b.setContentAreaFilled(false);
-        b.setBorderPainted(false);
+        b.setBorderPainted(ramka);
         b.setLocation(new Point(layoutX,layoutY));
         b.setVisible(true);
 
