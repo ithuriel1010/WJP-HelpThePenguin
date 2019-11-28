@@ -3,8 +3,11 @@ package com.company;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+
+import static javax.print.attribute.standard.MediaSize.JIS.B1;
 
 class ImagePanel extends JComponent {
     private Image image;
@@ -27,6 +30,8 @@ public class Main {
         double height = screenSize.getHeight();
         System.out.println(width);
         System.out.println(height);
+
+        Main m = new Main();
 
         Window game = new Window("Help the Penguin",width, height, width/2, height/2 );
 
@@ -53,16 +58,42 @@ public class Main {
         game.ButtonImage(friend,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/Panda.png",1300,440,true);
         game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
 
-
-        //food.setIcon(new ImageIcon(Class.class.getResource("C:/Users/Ola/Desktop/pizza.jpg")));
-
-        //game.add(mainPanel,BorderLayout.CENTER);
-        game.setVisible(true);
+        penguin.addActionListener(new penguinClick());
+        food.addActionListener(new foodClick());
+        sleep.addActionListener(new sleepClick());
+        friend.addActionListener(new friendClick());
 
         game.add(food);
         game.add(sleep);
         game.add(friend);
         game.add(penguin);
         game.setVisible(true);
+    }
+
+}
+class sleepClick implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Przycisk 1");
+    }
+}
+
+class foodClick implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Przycisk 1");
+    }
+}
+
+//class penguinClick implements ActionListener {
+//    public void actionPerformed(ActionEvent e) {
+//        JButton  b = (JButton) e.getSource();
+//        b.PenguinClick();
+//
+//
+//    }
+//}
+
+class friendClick implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Przycisk 1");
     }
 }
