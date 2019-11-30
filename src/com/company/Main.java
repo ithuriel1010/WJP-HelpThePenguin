@@ -60,7 +60,7 @@ public class Main {
 
         penguin.addActionListener(new penguinClick());
         //food.addActionListener(new foodClick());
-        sleep.addActionListener(new sleepClick(game, width, height));
+        sleep.addActionListener(new sleepClick(game, penguin));
         //friend.addActionListener(new friendClick());
 
         game.add(food);
