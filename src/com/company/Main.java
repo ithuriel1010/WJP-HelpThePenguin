@@ -59,9 +59,9 @@ public class Main {
         game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
 
         penguin.addActionListener(new penguinClick());
-        food.addActionListener(new foodClick());
-        sleep.addActionListener(new sleepClick());
-        friend.addActionListener(new friendClick());
+        //food.addActionListener(new foodClick());
+        sleep.addActionListener(new sleepClick(game, width, height));
+        //friend.addActionListener(new friendClick());
 
         game.add(food);
         game.add(sleep);
@@ -71,29 +71,4 @@ public class Main {
     }
 
 }
-class sleepClick implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Przycisk 1");
-    }
-}
 
-class foodClick implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Przycisk 1");
-    }
-}
-
-//class penguinClick implements ActionListener {
-//    public void actionPerformed(ActionEvent e) {
-//        JButton  b = (JButton) e.getSource();
-//        b.PenguinClick();
-//
-//
-//    }
-//}
-
-class friendClick implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Przycisk 1");
-    }
-}
