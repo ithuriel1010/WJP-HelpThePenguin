@@ -10,7 +10,6 @@ public class sleepClick implements ActionListener {
     public Window g;
     public Window w;
     public JButton penguin2;
-    long endTime = System.currentTimeMillis() + 30000;
     public int width2;
     public int height2;
 
@@ -25,7 +24,7 @@ public class sleepClick implements ActionListener {
         JButton b = (JButton) e.getSource();
 
         JPanel sleepTime = new JPanel();
-        sleepTime.setBounds(0, 0, 500, 500);
+        sleepTime.setBounds(0, 0, 500, 250);
         sleepTime.setOpaque(true);
         //sleepTime.setLocation(new Point(500,200));
         sleepTime.setBackground(Color.PINK);
@@ -61,6 +60,8 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
+                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/SleepingPenguin.png", 500, 275, false);
+
 
                 try {
                     iloscSnui = Integer.parseInt(iloscSnu);
@@ -93,17 +94,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 sleepTime.setVisible(false);
                 allSleepInfo.setVisible(false);
-                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/CutePenguin.png", 500, 275, false);
-
-                long StartTime = System.currentTimeMillis()+5000;
-
-                while(System.currentTimeMillis()<StartTime)
-                {
-
-                }
                 w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png", 500, 275, false);
-
-
             }
         });
 
