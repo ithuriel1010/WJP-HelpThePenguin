@@ -21,6 +21,9 @@ public class Window extends JFrame {
 
     }
 
+    Window(){}
+
+
     public void ButtonImage(JButton b, String file, int layoutX, int layoutY, boolean brakramki)
     {
         try

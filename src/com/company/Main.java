@@ -59,7 +59,7 @@ public class Main {
         game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
 
         penguin.addActionListener(new penguinClick(game));
-        //food.addActionListener(new foodClick());
+        food.addActionListener(new foodClick(game));
         sleep.addActionListener(new sleepClick(game, penguin));
         //friend.addActionListener(new friendClick());
 
