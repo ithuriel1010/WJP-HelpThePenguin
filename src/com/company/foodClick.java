@@ -18,22 +18,34 @@ public class foodClick implements ActionListener {
 
     public void actionPerformed(ActionEvent e)
     {
-
         JPanel foods = new JPanel();
-        foods.setBounds(0, 0, 500, 250);
+        foods.setBounds(0, 0, 500, 500);
         foods.setOpaque(true);
-        //sleepTime.setLocation(new Point(500,200));
-        foods.setBackground(Color.PINK);
+        foods.setBackground(Color.BLUE);
 
-        JTextArea info = new JTextArea();
-        info.setOpaque(false);
-        //info.setContentAreaFilled(false);
-        //b.setBorderPainted(false);
-        info.setText("Wybierz jedzenie, które ma zjeść pingwinek!");
-        info.setEditable(false);
-        info.setBounds(550, 325, 400, 100);
+        JButton pizza = new JButton();
+        JButton chicken = new JButton();
+        JButton sandwich = new JButton();
+        JButton pancake = new JButton();
+        JButton chocolate = new JButton();
+        JButton nuggets = new JButton();
 
-        foods.add(info);
+
+        g.ButtonImage(chicken, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chicken.png",0,0,false);
+        g.ButtonImage(pizza, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/pizza.png",110,0,false);
+        g.ButtonImage(sandwich, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/sandwich.png",220,0,false);
+        g.ButtonImage(pancake, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/pancakes.png",0,110,false);
+        g.ButtonImage(chocolate, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chocolate.png",110,110,false);
+        g.ButtonImage(nuggets, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/nuggets.png",220,110,false);
+
+        foods.add(chicken);
+        foods.add(pizza);
+        foods.add(sandwich);
+        foods.add(pancake);
+        foods.add(chocolate);
+        foods.add(nuggets);
+
+
         foods.setVisible(true);
 
         g.add(foods);
