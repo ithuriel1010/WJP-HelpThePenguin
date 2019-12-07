@@ -16,7 +16,10 @@ public class penguinClick implements ActionListener {
         hugInfo.setEditable(false);
         hugInfo.setOpaque(false);
         hugInfo.setText("Huggsy bardzo lubi przytulanie!");
-        hugInfo.setBounds(500,180,500,20);
+        hugInfo.setBounds(600,180,500,50);
+        Font font = hugInfo.getFont();
+        float size = font.getSize() + 10.0f;
+        hugInfo.setFont( font.deriveFont(size) );
     }
 
     boolean penguin_original = true;

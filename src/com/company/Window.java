@@ -24,15 +24,13 @@ public class Window extends JFrame {
     Window(){}
 
 
-    public void ButtonImage(JButton b, String file, int layoutX, int layoutY, boolean brakramki)
+    public void ButtonImage(JButton b, String file, int layoutX, int layoutY, boolean ramka)
     {
         try
         {
-            //Image img = ImageIO.read(new File("C:/Users/Ola/Desktop/pizza.jpg"));
             bimg = ImageIO.read(new File(file));
             int imagewidth = bimg.getWidth();
             int imageheight= bimg.getHeight();
-            //food.setBackground(Color.black);
             b.setSize(imagewidth,imageheight);
             b.setIcon(new ImageIcon(bimg));
         }
@@ -43,7 +41,7 @@ public class Window extends JFrame {
 
         b.setOpaque(false);
         b.setContentAreaFilled(false);
-        b.setBorderPainted(brakramki);
+        b.setBorderPainted(ramka);
         b.setLocation(new Point(layoutX,layoutY));
         b.setVisible(true);
 

@@ -11,8 +11,7 @@ public class sleepClick implements ActionListener {
     public Window g;
     public Window w;
     public JButton penguin2;
-    public int width2;
-    public int height2;
+
 
 
     public sleepClick(Window gameWindow, JButton penguin) {
@@ -32,8 +31,6 @@ public class sleepClick implements ActionListener {
 
         JTextArea info = new JTextArea();
         info.setOpaque(false);
-        //info.setContentAreaFilled(false);
-        //b.setBorderPainted(false);
         info.setText("Wpisz ile czau ma spać Huggsy:");
         info.setEditable(false);
         info.setBounds(550, 325, 400, 100);

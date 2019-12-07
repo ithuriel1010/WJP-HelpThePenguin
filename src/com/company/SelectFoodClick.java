@@ -18,17 +18,14 @@ public class SelectFoodClick implements ActionListener {
 
         if (b==foodClick.pizza)
         {
-            //System.out.println("Wybrales pizze");
             Main.hungry+=FoodButtons.pizza.healthPoints;
         }
         else if (b==foodClick.chicken)
         {
-            //System.out.println("Wybrales kurczaka");
             Main.hungry+=FoodButtons.chicken.healthPoints;
         }
         else if (b==foodClick.sandwich)
         {
-            //System.out.println("Wybrales kanapke");
             Main.hungry+=FoodButtons.sandwich.healthPoints;
         }
         else if (b==foodClick.pancake)

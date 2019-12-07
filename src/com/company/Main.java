@@ -60,7 +60,7 @@ public class Main {
 
         hungryPoints = new JTextArea();
         hungryPoints.setText("Health: "+ String.valueOf(hungry));
-        hungryPoints.setBounds(500,180,500,50);
+        hungryPoints.setBounds(550,100,500,50);
         hungryPoints.setOpaque(false);
         hungryPoints.setVisible(true);
 
