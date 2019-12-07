@@ -29,6 +29,9 @@ public class foodClick implements ActionListener {
         JButton pancake = new JButton();
         JButton chocolate = new JButton();
         JButton nuggets = new JButton();
+        JButton dinner = new JButton();
+        JButton fish = new JButton();
+        JButton salad = new JButton();
 
 
         g.ButtonImage(chicken, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chicken.png",0,0,false);
@@ -37,6 +40,9 @@ public class foodClick implements ActionListener {
         g.ButtonImage(pancake, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/pancakes.png",0,110,false);
         g.ButtonImage(chocolate, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chocolate.png",110,110,false);
         g.ButtonImage(nuggets, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/nuggets.png",220,110,false);
+        g.ButtonImage(dinner, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/dinner.png",0,2200,false);
+        g.ButtonImage(fish, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/fish.png",0,2200,false);
+        g.ButtonImage(salad, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/salad.png",0,2200,false);
 
         foods.add(chicken);
         foods.add(pizza);
@@ -44,6 +50,9 @@ public class foodClick implements ActionListener {
         foods.add(pancake);
         foods.add(chocolate);
         foods.add(nuggets);
+        foods.add(dinner);
+        foods.add(fish);
+        foods.add(salad);
 
 
         foods.setVisible(true);
