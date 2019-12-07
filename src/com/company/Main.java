@@ -9,19 +9,12 @@ import java.io.File;
 
 import static javax.print.attribute.standard.MediaSize.JIS.B1;
 
-class ImagePanel extends JComponent {
-    private Image image;
-    public ImagePanel(Image image) {
-        this.image = image;
-    }
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(image, 0, 0, this);
-    }
-}
+
 
 public class Main {
+
+    public static int hungry = 500;
+    public static JTextArea hungryPoints;
 
     public static void main(String[] args) {
 
@@ -30,6 +23,8 @@ public class Main {
         double height = screenSize.getHeight();
         System.out.println(width);
         System.out.println(height);
+
+
 
         Main m = new Main();
 
@@ -63,10 +58,21 @@ public class Main {
         sleep.addActionListener(new sleepClick(game, penguin));
         //friend.addActionListener(new friendClick());
 
+        hungryPoints = new JTextArea();
+        hungryPoints.setText("Health: "+ String.valueOf(hungry));
+        hungryPoints.setBounds(500,180,500,50);
+        hungryPoints.setOpaque(false);
+        hungryPoints.setVisible(true);
+
+        Font font = hungryPoints.getFont();
+        float size = font.getSize() + 10.0f;
+        hungryPoints.setFont( font.deriveFont(size) );
+
         game.add(food);
         game.add(sleep);
         game.add(friend);
         game.add(penguin);
+        game.add(hungryPoints);
         game.setVisible(true);
     }
 

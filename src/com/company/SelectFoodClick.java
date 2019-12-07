@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 
 public class SelectFoodClick implements ActionListener {
 
+    Window game;
+    SelectFoodClick(Window game)
+    {
+        this.game=game;
+    }
 
     public void actionPerformed(ActionEvent e)
     {
@@ -14,6 +19,7 @@ public class SelectFoodClick implements ActionListener {
         if (b==foodClick.pizza)
         {
             System.out.println("Wybrales pizze");
+            Main.hungry+=FoodButtons.pizza.healthPoints;
         }
         else if (b==foodClick.chicken)
         {
@@ -48,5 +54,9 @@ public class SelectFoodClick implements ActionListener {
         {
 
         }
+
+        Main.hungryPoints.setText("Health: "+ String.valueOf(Main.hungry));
+        game.add(Main.hungryPoints);
+
     }
 }

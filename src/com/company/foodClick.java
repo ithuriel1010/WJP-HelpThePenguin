@@ -54,15 +54,15 @@ public class foodClick implements ActionListener {
         g.ButtonImage(fish, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/fish.png",0,2200,false);
         g.ButtonImage(salad, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/salad.png",0,2200,false);
 
-        chicken.addActionListener(new SelectFoodClick());
-        pizza.addActionListener(new SelectFoodClick());
-        sandwich.addActionListener(new SelectFoodClick());
-        pancake.addActionListener(new SelectFoodClick());
-        chocolate.addActionListener(new SelectFoodClick());
-        nuggets.addActionListener(new SelectFoodClick());
-        dinner.addActionListener(new SelectFoodClick());
-        fish.addActionListener(new SelectFoodClick());
-        salad.addActionListener(new SelectFoodClick());
+        chicken.addActionListener(new SelectFoodClick(g));
+        pizza.addActionListener(new SelectFoodClick(g));
+        sandwich.addActionListener(new SelectFoodClick(g));
+        pancake.addActionListener(new SelectFoodClick(g));
+        chocolate.addActionListener(new SelectFoodClick(g));
+        nuggets.addActionListener(new SelectFoodClick(g));
+        dinner.addActionListener(new SelectFoodClick(g));
+        fish.addActionListener(new SelectFoodClick(g));
+        salad.addActionListener(new SelectFoodClick(g));
 
 
         foods.add(chicken);

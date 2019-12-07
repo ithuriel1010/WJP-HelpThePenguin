@@ -5,9 +5,18 @@ import javax.swing.*;
 public class FoodButtons {
 
     Window w;
+    public int calories;
+    public int happyPoints;
+    public int healthPoints;
+    FoodType type;
 
     FoodButtons(int calories, int happyPoints, int healthPoints, FoodType type)
-    { }
+    {
+        this.calories=calories;
+        this.happyPoints=happyPoints;
+        this.healthPoints=healthPoints;
+        this.type=type;
+    }
 
     public static FoodButtons chicken = new FoodButtons(100,100, 100,FoodType.goodfood);
     public static FoodButtons pizza = new FoodButtons(100,100,50,FoodType.fastfood);
