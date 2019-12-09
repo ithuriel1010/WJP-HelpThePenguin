@@ -30,7 +30,7 @@ public class penguinClick implements ActionListener {
         if(penguin_original==true)
         {
             hugInfo.setVisible(true);
-            w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/CutePenguin.png",500,275,false);
+            w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/CutePenguin.png",515,300,false);
             penguin_original=false;
         }
         else if (penguin_original==false){
