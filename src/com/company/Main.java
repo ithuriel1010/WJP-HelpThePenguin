@@ -17,6 +17,11 @@ public class Main {
     public static int happy = 500;
     public static JTextArea hungryPoints;
     public static JTextArea happyPoints;
+    public static boolean isWithFriend=false;
+    public static JButton food = new JButton();
+    public static JButton sleep = new JButton();
+    public static JButton friend = new JButton();
+    public static JButton penguin = new JButton();
 
 
     public static void main(String[] args) {
@@ -46,10 +51,7 @@ public class Main {
         JPanel mainPanel = new JPanel();
         mainPanel.setVisible(true);
 
-        JButton food = new JButton();
-        JButton sleep = new JButton();
-        JButton friend = new JButton();
-        JButton penguin = new JButton();
+
 
         game.ButtonImage(food, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/PNG/Eggs.png",1300,0,true);
         game.ButtonImage(sleep,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/SleepCloud.png",1300,220,true);
