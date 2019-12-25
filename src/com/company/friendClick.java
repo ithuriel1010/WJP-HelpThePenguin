@@ -33,7 +33,7 @@ public class friendClick implements ActionListener {
             System.out.println("Błąd pliku backgroung");
         }
 
-        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy.png",350,350,false);
+        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy2.png",350,350,false);
         g.ButtonImage(panda,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/HappyPanda.png",650,350,false);
 
         g.ButtonImage(leave,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Lave.png",0,0,true);
