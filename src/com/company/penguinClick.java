@@ -38,7 +38,7 @@ public class penguinClick implements ActionListener {
             }
             else if (penguin_original==false){
                 hugInfo.setVisible(false);
-                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png", 500, 275, false);
+                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png", 480, 285, false);
                 penguin_original = true;
             }
             gra2.add(hugInfo);
@@ -49,12 +49,12 @@ public class penguinClick implements ActionListener {
             if(penguin_original_with_friend==true)
             {
                 //hugInfo.setVisible(true);
-                w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/coolPenguin.png",350,350,false);
+                w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/coolPenguin2.png",350,350,false);
                 penguin_original_with_friend=false;
             }
             else if (penguin_original_with_friend==false){
                 //hugInfo.setVisible(false);
-                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy.png", 350,350, false);
+                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy2.png", 350,350, false);
                 penguin_original_with_friend = true;
             }
             //hugInfo.setVisible(true);

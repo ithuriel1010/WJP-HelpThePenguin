@@ -66,7 +66,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
-                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/SleepingPenguin.png", 500, 275, false);
+                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/SleepingPenguin2.png", 500, 275, false);
 
 
                 try {

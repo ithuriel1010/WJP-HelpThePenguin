@@ -106,7 +106,7 @@ public class foodClick implements ActionListener {
         foods.add(salad);
         foods.add(ok);
 
-        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin.png",500,295,false);
+        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin2.png",500,295,false);
 
         foods.setVisible(true);
 

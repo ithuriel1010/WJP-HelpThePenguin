@@ -34,7 +34,7 @@ public class friendClick implements ActionListener {
         }
 
         g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy2.png",350,350,false);
-        g.ButtonImage(panda,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/HappyPanda.png",650,350,false);
+        g.ButtonImage(panda,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/HappyPanda2.png",650,350,false);
 
         g.ButtonImage(leave,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Lave.png",0,0,true);
         leave.addActionListener(new ActionListener() {
@@ -89,6 +89,8 @@ public class friendClick implements ActionListener {
         Font font = friendInfo.getFont();
         float size = font.getSize() + 13.0f;
         friendInfo.setFont( font.deriveFont(size) );
+
+        panda.addActionListener(new pandaClick(g));
 
         g.add(penguin);
         g.add(panda);
