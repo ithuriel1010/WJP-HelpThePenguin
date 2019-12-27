@@ -42,7 +42,7 @@ public class friendClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 Main.isWithFriend=false;
-                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
+                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png",500,275,false);
 
                 try
                 {

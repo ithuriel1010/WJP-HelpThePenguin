@@ -38,6 +38,8 @@ public class foodClick implements ActionListener {
         //JPanel foods = new JPanel();
         foods.setVisible(true);
         g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin2.png",500,295,false);
+        // ./plik.png
+        // ./katalog/plik.png
 
     }
 
@@ -98,7 +100,7 @@ public class foodClick implements ActionListener {
                 foods.setVisible(false);
                 //foods.remove(info4);
                 //g.remove(foods);
-                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
+                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png",500,275,false);
             }
         });
 

@@ -130,7 +130,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 sleepTime.setVisible(false);
                 //allSleepInfo.setVisible(false);
-                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png", 500, 275, false);
+                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png", 500, 275, false);
                 g.remove(sleepTime);
             }
         });
