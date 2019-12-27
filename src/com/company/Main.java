@@ -15,6 +15,7 @@ public class Main {
 
     public static int hungry = 500;
     public static int happy = 500;
+    public static int eatenFood = 0;
     public static JTextArea hungryPoints;
     public static JTextArea happyPoints;
     public static boolean isWithFriend=false;

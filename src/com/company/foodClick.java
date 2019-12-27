@@ -8,8 +8,11 @@ import java.awt.event.ActionListener;
 public class foodClick implements ActionListener {
 
     public Window g;
-    public Window w;
-    public JButton penguin;
+    public static Window w;
+    public static JButton penguin;
+    //public JPanel foods = new JPanel();
+    final JPanel foods = new TransparentPanel();
+    public  JTextArea info4 = new JTextArea();
     static public JButton pizza;
     static public JButton chicken;
     static public JButton sandwich;
@@ -25,15 +28,37 @@ public class foodClick implements ActionListener {
         g = gameWindow;
         w = new Window();
         this.penguin=penguin;
+        createFoods();
+        foods.setVisible(false);
     }
 
 
     public void actionPerformed(ActionEvent e)
     {
-        JPanel foods = new JPanel();
-        foods.setBounds(0, 0, 500, 500);
-        foods.setOpaque(true);
-        foods.setBackground(Color.BLUE);
+        //JPanel foods = new JPanel();
+        foods.setVisible(true);
+        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin2.png",500,295,false);
+
+    }
+
+    private class TransparentPanel extends JPanel {
+        {
+            setOpaque(false);
+        }
+        public void paintComponent(Graphics g) {
+            g.setColor(getBackground());
+            Rectangle r = g.getClipBounds();
+            g.fillRect(r.x, r.y, r.width, r.height);
+            super.paintComponent(g);
+        }
+    }
+
+    private void createFoods() {
+        foods.setBounds(0, 0, 500, 550);
+        //foods.setOpaque(true);
+        foods.setBackground(new Color(211,211,211,125));
+        //JPanel p2=new JPanel();
+        //foods.setBackground(Color.LIGHT_GRAY);
 
         JTextArea info = new JTextArea();
         info.setText("Wybierz co ma zjeść pingwinek!");
@@ -43,10 +68,27 @@ public class foodClick implements ActionListener {
         info2.setText("Pamiętaj że istotne jest co i ile jesz!");
         info2.setOpaque(false);
 
+        JTextArea info3 = new JTextArea();
+        info3.setText("Zdrowa dieta jest bardzo ważna. Pamiętaj że mimo iż niektóre potrawy \nsą smaczne i poprawiją nam humor, nie zawsze są one zdrowe \nw nadmiernej ilości!");
+        info3.setOpaque(false);
+        info3.setVisible(true);
+
+        info4.setText("O nie! Pingwinek jest przekarmiony! Kiedy jesz niezdrowe jedzenie \n(lub nadmierną ilość zdrowego!) jest to dla ciebie niezdrowe. \nTeraz każda większa ilość jedzenia będzie zła dla pingwinka");
+        info4.setOpaque(false);
+        info4.setVisible(false);
+
+
+
         Font font = info.getFont();
         float size = font.getSize() + 2.0f;
+        float size2 = font.getSize() + 4.0f;
+
         info.setFont( font.deriveFont(size) );
         info2.setFont( font.deriveFont(size) );
+        info3.setFont( font.deriveFont(size) );
+        info4.setFont(font.deriveFont(size2));
+        info4.setForeground(Color.RED);
+
 
         JButton ok = new JButton();
         ok.setText("Zakończ karmienie");
@@ -54,8 +96,8 @@ public class foodClick implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 foods.setVisible(false);
-                //allSleepInfo.setVisible(false);
-                g.remove(foods);
+                //foods.remove(info4);
+                //g.remove(foods);
                 g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/HappyPenguin.png",500,275,false);
             }
         });
@@ -82,15 +124,15 @@ public class foodClick implements ActionListener {
         g.ButtonImage(fish, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/fish.png",0,2200,false);
         g.ButtonImage(salad, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/salad.png",0,2200,false);
 
-        chicken.addActionListener(new SelectFoodClick(g));
-        pizza.addActionListener(new SelectFoodClick(g));
-        sandwich.addActionListener(new SelectFoodClick(g));
-        pancake.addActionListener(new SelectFoodClick(g));
-        chocolate.addActionListener(new SelectFoodClick(g));
-        nuggets.addActionListener(new SelectFoodClick(g));
-        dinner.addActionListener(new SelectFoodClick(g));
-        fish.addActionListener(new SelectFoodClick(g));
-        salad.addActionListener(new SelectFoodClick(g));
+        chicken.addActionListener(new SelectFoodClick(g, this));
+        pizza.addActionListener(new SelectFoodClick(g, this));
+        sandwich.addActionListener(new SelectFoodClick(g, this));
+        pancake.addActionListener(new SelectFoodClick(g, this));
+        chocolate.addActionListener(new SelectFoodClick(g, this));
+        nuggets.addActionListener(new SelectFoodClick(g, this));
+        dinner.addActionListener(new SelectFoodClick(g, this));
+        fish.addActionListener(new SelectFoodClick(g,this));
+        salad.addActionListener(new SelectFoodClick(g,this));
 
 
         foods.add(info);
@@ -104,13 +146,24 @@ public class foodClick implements ActionListener {
         foods.add(dinner);
         foods.add(fish);
         foods.add(salad);
+        foods.add(info3);
         foods.add(ok);
+        foods.add(info4);
 
-        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin2.png",500,295,false);
 
         foods.setVisible(true);
 
         g.add(foods);
-        g.setVisible(true);
+    }
+
+    public void TooMuchFood()
+    {
+
+
+        info4.setVisible(true);
+
+        foods.add(info4);
+        g.add(foods);
+        //g.setVisible(true);
     }
 }

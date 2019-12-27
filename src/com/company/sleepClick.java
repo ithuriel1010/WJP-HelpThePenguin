@@ -24,14 +24,26 @@ public class sleepClick implements ActionListener {
         penguin2 = penguin;
     }
 
+    private class TransparentPanel extends JPanel {
+        {
+            setOpaque(false);
+        }
+        public void paintComponent(Graphics g) {
+            g.setColor(getBackground());
+            Rectangle r = g.getClipBounds();
+            g.fillRect(r.x, r.y, r.width, r.height);
+            super.paintComponent(g);
+        }
+    }
+
     public void actionPerformed(ActionEvent e) {
         JButton b = (JButton) e.getSource();
 
-        JPanel sleepTime = new JPanel();
+        JPanel sleepTime = new TransparentPanel();
         sleepTime.setBounds(0, 0, 500, 300);
-        sleepTime.setOpaque(true);
+        sleepTime.setOpaque(false);
         //sleepTime.setLocation(new Point(500,200));
-        sleepTime.setBackground(Color.PINK);
+        sleepTime.setBackground(new Color(211,211,211,125));
 
         JTextArea info = new JTextArea();
         info.setOpaque(false);
