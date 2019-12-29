@@ -42,16 +42,20 @@ public class Main {
 
         instruction = new JTextArea();
         goToTheGame = new JButton();
-        instruction.setText(game.GetFromFile("./Rozpocznij.txt"));
-        //instruction.setText("Aby grać w grą należy opiekować się pingwinkiem! \nTrzeba pamiętać o spaniu, karmieniu i spotkaniach z przyjaciółmi \n");
+        //instruction.setText(game.GetFromFile("./Rozpocznij.txt"));
+        instruction.setText("Witaj w grze 'Help the Penguin'! \nZasady gry nie są trudne: Musisz opiekować się pingwinkiem co nauczy cię troche \no zdrowiu psychicznym i co zrobić aby było ono jak najlepsze. \nPingwina możesz karmić, kłaść spać oraz wysyłać go na spotkania z przyjaciółmi. \nPamiętaj jednak że jedzenie i sen powinny być w zdrowej ilości! Monitoruj nastrój oraz zdrowie \npingwinka! Wzrastają one kiedy zrobisz coś dobrze i spadają kiedy twoja decyzja nie była najzdrowsza! \nGrając zobaczysz informacje o zdrowiu i o tym jak o nie dbać, pamiętaj jednak że to tylko gra! \nJeśli masz problem lub źle się czujesz porozmawiaj z kimś dorosłym! \nPóki co jednak życzę ci wspaniałej gry z pingwinkiem!!!");
+        Font font = instruction.getFont();
+        float size = font.getSize() + 20.0f;
+        instruction.setFont( font.deriveFont(size) );
+        instruction.setForeground(Color.white);
         instruction.setOpaque(false);
-        instruction.setBounds(100,100,600,300);
+        instruction.setBounds(70,100,1500,500);
         //goToTheGame.setText("Przejdź do gry!");
         instruction.setVisible(true);
         goToTheGame.setVisible(true);
 
         goToTheGame.addActionListener(new MainGame(game,instruction,goToTheGame));
-        game.ButtonImage(goToTheGame, "./Rozpocznij.png",100,500,true);
+        game.ButtonImage(goToTheGame, "./Rozpocznij.png",100,550,true);
 
         game.add(instruction);
         game.add(goToTheGame);

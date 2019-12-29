@@ -22,22 +22,43 @@ public class foodClick implements ActionListener {
     static public JButton dinner;
     static public JButton fish;
     static public JButton salad;
+    private TimeManagement time;
+    private MainGame game;
 
 
-    public foodClick(Window gameWindow, JButton penguin) {
+    public foodClick(Window gameWindow, JButton penguin, TimeManagement time, MainGame game) {
         g = gameWindow;
         w = new Window();
+        this.time=time;
+        this.time.setFood(this);
         this.penguin=penguin;
         createFoods();
         foods.setVisible(false);
+        this.game=game;
+    }
+
+    public foodClick() {
+
     }
 
 
     public void actionPerformed(ActionEvent e)
     {
+//        time.TimeFromLastMeal();
         //JPanel foods = new JPanel();
+        if(game.eatenFood>=1501)
+        {
+            TooMuchFood();
+        }
+        else
+        {
+            info4.setVisible(false);
+            foods.add(info4);
+            g.add(foods);
+        }
         foods.setVisible(true);
         g.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
+
         // ./plik.png
         // ./katalog/plik.png
 
@@ -126,15 +147,15 @@ public class foodClick implements ActionListener {
         g.ButtonImage(fish, "./fish.png",0,2200,false);
         g.ButtonImage(salad, "./salad.png",0,2200,false);
 
-        chicken.addActionListener(new SelectFoodClick(g, this));
-        pizza.addActionListener(new SelectFoodClick(g, this));
-        sandwich.addActionListener(new SelectFoodClick(g, this));
-        pancake.addActionListener(new SelectFoodClick(g, this));
-        chocolate.addActionListener(new SelectFoodClick(g, this));
-        nuggets.addActionListener(new SelectFoodClick(g, this));
-        dinner.addActionListener(new SelectFoodClick(g, this));
-        fish.addActionListener(new SelectFoodClick(g,this));
-        salad.addActionListener(new SelectFoodClick(g,this));
+        chicken.addActionListener(new SelectFoodClick(g, this, time));
+        pizza.addActionListener(new SelectFoodClick(g, this, time));
+        sandwich.addActionListener(new SelectFoodClick(g, this, time));
+        pancake.addActionListener(new SelectFoodClick(g, this, time));
+        chocolate.addActionListener(new SelectFoodClick(g, this, time));
+        nuggets.addActionListener(new SelectFoodClick(g, this, time));
+        dinner.addActionListener(new SelectFoodClick(g, this, time));
+        fish.addActionListener(new SelectFoodClick(g,this, time));
+        salad.addActionListener(new SelectFoodClick(g,this, time));
 
 
         foods.add(info);
@@ -153,6 +174,7 @@ public class foodClick implements ActionListener {
         foods.add(info4);
 
 
+
         foods.setVisible(true);
 
         g.add(foods);
@@ -160,12 +182,22 @@ public class foodClick implements ActionListener {
 
     public void TooMuchFood()
     {
-
-
         info4.setVisible(true);
 
         foods.add(info4);
         g.add(foods);
         //g.setVisible(true);
+    }
+
+    public void PenguinCanEat()
+    {
+//        info4.setVisible(false);
+//        foods.add(info4);
+//        g.add(foods);
+        MainGame.eatenFood-=100;
+        if(game.eatenFood<=0)
+        {
+            game.eatenFood=0;
+        }
     }
 }

@@ -22,6 +22,7 @@ public class MainGame implements ActionListener {
     public Window game;
     public JTextArea instruction;
     public JButton goToTheGame;
+    public TimeManagement time = new TimeManagement();
 
     public MainGame(Window gameWindow, JTextArea instruction, JButton goToTheGame) {
         game = gameWindow;
@@ -33,6 +34,12 @@ public class MainGame implements ActionListener {
     {
         game.remove(instruction);
         game.remove(goToTheGame);
+
+        Thread t = new Thread(time);
+        time.setGame(this);
+        t.start();
+
+//        time.TimeFunction1();
 
         try
         {
@@ -49,7 +56,7 @@ public class MainGame implements ActionListener {
         game.ButtonImage(penguin,"./Pengiun2.png",480,285,false);
 
         penguin.addActionListener(new penguinClick(game));
-        food.addActionListener(new foodClick(game, penguin));
+        food.addActionListener(new foodClick(game, penguin, time, this));
         sleep.addActionListener(new sleepClick(game, penguin));
         friend.addActionListener(new friendClick(game, penguin));
 
@@ -78,6 +85,19 @@ public class MainGame implements ActionListener {
         game.add(sleep);
         game.add(friend);
         game.add(penguin);
+        game.add(hungryPoints);
+        game.add(happyPoints);
+
+    }
+
+    public void TimePassed()
+    {
+        hungry-=50;
+        happy-=50;
+
+        hungryPoints.setText("Health: "+ String.valueOf(hungry));
+        happyPoints.setText("Mood: "+ String.valueOf(happy));
+
         game.add(hungryPoints);
         game.add(happyPoints);
 

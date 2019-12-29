@@ -8,14 +8,18 @@ public class SelectFoodClick implements ActionListener {
 
     foodClick fc1;
     Window game;
-    SelectFoodClick(Window game, foodClick fc )
+    private TimeManagement time;
+
+    SelectFoodClick(Window game, foodClick fc, TimeManagement time)
     {
         this.game=game;
         fc1 = fc;
+        this.time=time;
     }
 
     public void actionPerformed(ActionEvent e)
     {
+        time.TimeFunction2();
         JButton b = (JButton) e.getSource();
         int foodConsumed=0;
         int foodConsumed2=0;
