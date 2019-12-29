@@ -13,17 +13,9 @@ import static javax.print.attribute.standard.MediaSize.JIS.B1;
 
 public class Main {
 
-    public static int hungry = 500;
-    public static int happy = 500;
-    public static int eatenFood = 0;
-    public static JTextArea hungryPoints;
-    public static JTextArea happyPoints;
-    public static boolean isWithFriend=false;
-    public static JButton food = new JButton();
-    public static JButton sleep = new JButton();
-    public static JButton friend = new JButton();
-    public static JButton penguin = new JButton();
 
+    public static JTextArea instruction;
+    public static JButton goToTheGame;
 
     public static void main(String[] args) {
 
@@ -33,15 +25,13 @@ public class Main {
         System.out.println(width);
         System.out.println(height);
 
-
-
         Main m = new Main();
 
         Window game = new Window("Help the Penguin",width, height, width/2, height/2 );
 
         try
         {
-            game.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Background/Snowy/01/snowy01_preview-01.png")))));
+            game.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
         }
         catch(Exception e)
         {
@@ -49,48 +39,22 @@ public class Main {
         }
 
 
-        JPanel mainPanel = new JPanel();
-        mainPanel.setVisible(true);
 
+        instruction = new JTextArea();
+        goToTheGame = new JButton();
+        instruction.setText(game.GetFromFile("./Rozpocznij.txt"));
+        //instruction.setText("Aby grać w grą należy opiekować się pingwinkiem! \nTrzeba pamiętać o spaniu, karmieniu i spotkaniach z przyjaciółmi \n");
+        instruction.setOpaque(false);
+        instruction.setBounds(100,100,600,300);
+        //goToTheGame.setText("Przejdź do gry!");
+        instruction.setVisible(true);
+        goToTheGame.setVisible(true);
 
+        goToTheGame.addActionListener(new MainGame(game,instruction,goToTheGame));
+        game.ButtonImage(goToTheGame, "./Rozpocznij.png",100,500,true);
 
-        game.ButtonImage(food, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/PNG/Eggs.png",1300,0,true);
-        game.ButtonImage(sleep,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/SleepCloud.png",1300,220,true);
-        game.ButtonImage(friend,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/Panda2.png",1300,440,true);
-        game.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png",480,285,false);
-
-        penguin.addActionListener(new penguinClick(game));
-        food.addActionListener(new foodClick(game, penguin));
-        sleep.addActionListener(new sleepClick(game, penguin));
-        friend.addActionListener(new friendClick(game, penguin));
-
-        hungryPoints = new JTextArea();
-        hungryPoints.setText("Health: "+ String.valueOf(hungry));
-        hungryPoints.setBounds(550,100,500,50);
-        hungryPoints.setOpaque(false);
-        hungryPoints.setVisible(true);
-
-        happyPoints = new JTextArea();
-        happyPoints.setText("Mood: "+ String.valueOf(happy));
-        happyPoints.setBounds(550,150,500,50);
-        happyPoints.setOpaque(false);
-        happyPoints.setVisible(true);
-
-        Font font = hungryPoints.getFont();
-        float size = font.getSize() + 10.0f;
-        hungryPoints.setFont( font.deriveFont(size) );
-        happyPoints.setFont( font.deriveFont(size) );
-        hungryPoints.setForeground(Color.white);
-        happyPoints.setForeground(Color.white);
-
-
-
-        game.add(food);
-        game.add(sleep);
-        game.add(friend);
-        game.add(penguin);
-        game.add(hungryPoints);
-        game.add(happyPoints);
+        game.add(instruction);
+        game.add(goToTheGame);
         game.setVisible(true);
     }
 

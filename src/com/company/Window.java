@@ -4,7 +4,9 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.*;
+
+import static javax.print.attribute.standard.MediaSizeName.C;
 
 public class Window extends JFrame {
 
@@ -46,4 +48,31 @@ public class Window extends JFrame {
         b.setVisible(true);
 
     }
+
+    public String GetFromFile(String file)
+    {
+        String fileAsString="";
+        try
+        {
+            InputStream is = new FileInputStream(file);
+            BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+            String line = buf.readLine();
+            StringBuilder sb = new StringBuilder();
+
+            while (line != null) {
+                sb.append(line).append("\n");
+                line = buf.readLine();
+            }
+            fileAsString = sb.toString();
+            //System.out.println("Contents : " + fileAsString);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return fileAsString;
+    }
+
+
 }

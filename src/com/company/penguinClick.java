@@ -28,33 +28,33 @@ public class penguinClick implements ActionListener {
        JButton b = (JButton) e.getSource();
         Window w = new Window("X",25,25,22,65);
 
-        if(Main.isWithFriend==false)
+        if(MainGame.isWithFriend==false)
         {
             if(penguin_original==true)
             {
                 hugInfo.setVisible(true);
-                w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/CutePenguin3.png",515,300,false);
+                w.ButtonImage(b,"./CutePenguin3.png",515,300,false);
                 penguin_original=false;
             }
             else if (penguin_original==false){
                 hugInfo.setVisible(false);
-                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png", 480, 285, false);
+                w.ButtonImage(b, "./Pengiun2.png", 480, 285, false);
                 penguin_original = true;
             }
             gra2.add(hugInfo);
             gra2.setVisible(true);
         }
-        else if(Main.isWithFriend==true)
+        else if(MainGame.isWithFriend==true)
         {
             if(penguin_original_with_friend==true)
             {
                 //hugInfo.setVisible(true);
-                w.ButtonImage(b,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/coolPenguin2.png",350,350,false);
+                w.ButtonImage(b,"./coolPenguin2.png",350,350,false);
                 penguin_original_with_friend=false;
             }
             else if (penguin_original_with_friend==false){
                 //hugInfo.setVisible(false);
-                w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy2.png", 350,350, false);
+                w.ButtonImage(b, "./veryHappy2.png", 350,350, false);
                 penguin_original_with_friend = true;
             }
             //hugInfo.setVisible(true);

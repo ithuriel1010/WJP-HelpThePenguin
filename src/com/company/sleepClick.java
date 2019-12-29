@@ -78,7 +78,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
-                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/SleepingPenguin2.png", 500, 275, false);
+                w.ButtonImage(penguin2, "./SleepingPenguin2.png", 500, 275, false);
 
 
                 try {
@@ -87,16 +87,16 @@ public class sleepClick implements ActionListener {
 
                     if (iloscSnui < 8) {
                         sleepinfo.setText("Jest to troche za mało snu");
-                        Main.happy-=100;
-                        Main.hungry-=100;
+                        MainGame.happy-=100;
+                        MainGame.hungry-=100;
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
                         sleepinfo.setText("To jest odpowiednia ilość snu!");
-                        Main.happy+=100;
-                        Main.hungry+=100;
+                        MainGame.happy+=100;
+                        MainGame.hungry+=100;
                     } else if (iloscSnui > 10) {
                         sleepinfo.setText("Jest to troche za dużo snu");
-                        Main.happy-=100;
-                        Main.hungry-=100;
+                        MainGame.happy-=100;
+                        MainGame.hungry-=100;
                     } else {
                         sleepinfo.setText("Wpisz poprawną ilośc snu!");
                     }
@@ -105,11 +105,11 @@ public class sleepClick implements ActionListener {
                     sleepinfo.setText("Wpisz poprawną wartość");
                 }
 
-                Main.hungryPoints.setText("Health: "+ String.valueOf(Main.hungry));
-                Main.happyPoints.setText("Mood: "+ String.valueOf(Main.happy));
+                MainGame.hungryPoints.setText("Health: "+ String.valueOf(MainGame.hungry));
+                MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
 
-                g.add(Main.hungryPoints);
-                g.add(Main.happyPoints);
+                g.add(MainGame.hungryPoints);
+                g.add(MainGame.happyPoints);
 
                 allSleepInfo.setText("Nastolatki (14-17 lat) powinny spać 8-10 godzin. \nMłodzież (18-25 lat) powinna spać 7-9 godzin. \nDorośli w wieku 26-64 lat powinni spać 7-9 godzin. \nDorośli w wieku 65 lat i więcej powinni spać 7-8 godzin na dobę");
                 allSleepInfo.setVisible(true);
@@ -130,7 +130,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 sleepTime.setVisible(false);
                 //allSleepInfo.setVisible(false);
-                w.ButtonImage(penguin2, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png", 500, 275, false);
+                w.ButtonImage(penguin2, "./Pengiun2.png", 500, 275, false);
                 g.remove(sleepTime);
             }
         });

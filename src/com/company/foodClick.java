@@ -37,7 +37,7 @@ public class foodClick implements ActionListener {
     {
         //JPanel foods = new JPanel();
         foods.setVisible(true);
-        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/eatingPenguin2.png",500,295,false);
+        g.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
         // ./plik.png
         // ./katalog/plik.png
 
@@ -100,7 +100,7 @@ public class foodClick implements ActionListener {
                 foods.setVisible(false);
                 //foods.remove(info4);
                 //g.remove(foods);
-                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png",500,275,false);
+                g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
             }
         });
 
@@ -116,15 +116,15 @@ public class foodClick implements ActionListener {
         salad = new JButton();
 
 
-        g.ButtonImage(chicken, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chicken.png",0,100,false);
-        g.ButtonImage(pizza, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/pizza.png",110,0,false);
-        g.ButtonImage(sandwich, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/sandwich.png",220,0,false);
-        g.ButtonImage(pancake, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/pancakes.png",0,110,false);
-        g.ButtonImage(chocolate, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/chocolate.png",110,110,false);
-        g.ButtonImage(nuggets, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/nuggets.png",220,110,false);
-        g.ButtonImage(dinner, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/dinner.png",0,2200,false);
-        g.ButtonImage(fish, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/fish.png",0,2200,false);
-        g.ButtonImage(salad, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Foods/FoodMenu/salad.png",0,2200,false);
+        g.ButtonImage(chicken, "./chicken.png",0,100,false);
+        g.ButtonImage(pizza, "./pizza.png",110,0,false);
+        g.ButtonImage(sandwich, "./sandwich.png",220,0,false);
+        g.ButtonImage(pancake, "./pancakes.png",0,110,false);
+        g.ButtonImage(chocolate, "./chocolate.png",110,110,false);
+        g.ButtonImage(nuggets, "./nuggets.png",220,110,false);
+        g.ButtonImage(dinner, "./dinner.png",0,2200,false);
+        g.ButtonImage(fish, "./fish.png",0,2200,false);
+        g.ButtonImage(salad, "./salad.png",0,2200,false);
 
         chicken.addActionListener(new SelectFoodClick(g, this));
         pizza.addActionListener(new SelectFoodClick(g, this));

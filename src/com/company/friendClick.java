@@ -23,30 +23,30 @@ public class friendClick implements ActionListener {
 
     public void actionPerformed(ActionEvent e)
     {
-        Main.isWithFriend=true;
+        MainGame.isWithFriend=true;
         try
         {
-            g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Background/Forest/Cartoon_Forest_BG_02/Cartoon_Forest_BG_02.png")))));
+            g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./Cartoon_Forest_BG_02.png")))));
         }
         catch(Exception m)
         {
             System.out.println("Błąd pliku backgroung");
         }
 
-        g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/veryHappy2.png",350,350,false);
-        g.ButtonImage(panda,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/HappyPanda2.png",650,350,false);
+        g.ButtonImage(penguin,"./veryHappy2.png",350,350,false);
+        g.ButtonImage(panda,"./HappyPanda2.png",650,350,false);
 
-        g.ButtonImage(leave,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Lave.png",0,0,true);
+        g.ButtonImage(leave,"./Lave.png",0,0,true);
         leave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Main.isWithFriend=false;
-                g.ButtonImage(penguin,"D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Penguin/Pengiun2.png.png",500,275,false);
+                MainGame.isWithFriend=false;
+                g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
 
                 try
                 {
-                    g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Background/Snowy/01/snowy01_preview-01.png")))));
+                    g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
                 }
                 catch(Exception m)
                 {
@@ -56,12 +56,12 @@ public class friendClick implements ActionListener {
                 g.remove(panda);
                 g.remove(leave);
 
-                g.add(Main.food);
-                g.add(Main.sleep);
-                g.add(Main.friend);
+                g.add(MainGame.food);
+                g.add(MainGame.sleep);
+                g.add(MainGame.friend);
                 g.add(penguin);
-                g.add(Main.hungryPoints);
-                g.add(Main.happyPoints);
+                g.add(MainGame.hungryPoints);
+                g.add(MainGame.happyPoints);
                 g.setVisible(true);
 
 
@@ -82,8 +82,8 @@ public class friendClick implements ActionListener {
         friendInfo.setVisible(true);
 
 
-        Main.happy+=500;
-        Main.happyPoints.setText("Mood: "+ String.valueOf(Main.happy));
+        MainGame.happy+=500;
+        MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
         info.add(friendInfo);
 
         Font font = friendInfo.getFont();
@@ -94,8 +94,8 @@ public class friendClick implements ActionListener {
 
         g.add(penguin);
         g.add(panda);
-        g.add(Main.happyPoints);
-        g.add(Main.hungryPoints);
+        g.add(MainGame.happyPoints);
+        g.add(MainGame.hungryPoints);
         g.add(leave);
         g.add(info);
 

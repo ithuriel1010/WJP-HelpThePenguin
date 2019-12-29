@@ -20,11 +20,11 @@ public class pandaClick implements ActionListener {
 
         if (panda_original == true)
         {
-            w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/VeryHappyPanda.png", 650,350, false);
+            w.ButtonImage(b, "./VeryHappyPanda.png", 650,350, false);
             panda_original = false;
         } else if (panda_original == false)
         {
-            w.ButtonImage(b, "D:/Studia/Semestr V/Współczesne języki programowania/Projekt/Panda/HappyPanda2.png", 650,350, false);
+            w.ButtonImage(b, "./HappyPanda2.png", 650,350, false);
             panda_original = true;
         }
 
