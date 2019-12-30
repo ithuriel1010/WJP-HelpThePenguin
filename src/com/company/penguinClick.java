@@ -21,6 +21,8 @@ public class penguinClick implements ActionListener {
         float size = font.getSize() + 10.0f;
         hugInfo.setFont( font.deriveFont(size) );
         hugInfo.setForeground(Color.white);
+        gra2.add(hugInfo);
+        hugInfo.setVisible(false);
     }
 
     boolean penguin_original = true;
@@ -33,11 +35,10 @@ public class penguinClick implements ActionListener {
         {
             if(penguin_original==true)
             {
-                hugInfo.setVisible(true);
                 w.ButtonImage(b,"./CutePenguin3.png",515,300,false);
-                penguin_original=false;
-                gra2.add(hugInfo);
                 gra2.setVisible(true);
+                hugInfo.setVisible(true);
+                penguin_original=false;
             }
             else if (penguin_original==false){
                 hugInfo.setVisible(false);
