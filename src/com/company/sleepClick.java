@@ -15,7 +15,7 @@ public class sleepClick implements ActionListener {
     public Window g;
     public Window w;
     public JButton penguin2;
-
+    public JTextArea healthInfo;
 
 
     public sleepClick(Window gameWindow, JButton penguin) {
@@ -47,7 +47,7 @@ public class sleepClick implements ActionListener {
 
         JTextArea info = new JTextArea();
         info.setOpaque(false);
-        info.setText("Wpisz ile godzin ma spać Huggsy:");
+        info.setText(Subtitles.sleepInfo1);
         info.setEditable(false);
         info.setBounds(550, 325, 400, 100);
 
@@ -63,7 +63,7 @@ public class sleepClick implements ActionListener {
         allSleepInfo.setEditable(false);
         allSleepInfo.setOpaque(false);
 
-        JTextArea healthInfo = new JTextArea();
+        healthInfo = new JTextArea();
         healthInfo.setEditable(false);
         healthInfo.setOpaque(false);
 
@@ -86,19 +86,23 @@ public class sleepClick implements ActionListener {
 
 
                     if (iloscSnui < 8) {
-                        sleepinfo.setText("Jest to troche za mało snu");
+                        sleepinfo.setText(Subtitles.tooLittleSleep);
                         MainGame.happy-=100;
                         MainGame.hungry-=100;
+                        NotEnoughSleep();
+//                        healthInfo.setVisible(true);
+//                        sleepTime.add(healthInfo);
+
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
-                        sleepinfo.setText("To jest odpowiednia ilość snu!");
+                        sleepinfo.setText(Subtitles.enoughSleep);
                         MainGame.happy+=100;
                         MainGame.hungry+=100;
                     } else if (iloscSnui > 10) {
-                        sleepinfo.setText("Jest to troche za dużo snu");
+                        sleepinfo.setText(Subtitles.tooMuchSleep);
                         MainGame.happy-=100;
                         MainGame.hungry-=100;
                     } else {
-                        sleepinfo.setText("Wpisz poprawną ilośc snu!");
+                        sleepinfo.setText(Subtitles.incorrectValue);
                     }
                     sleepinfo.setVisible(true);
                 } catch (Exception v) {
@@ -111,13 +115,12 @@ public class sleepClick implements ActionListener {
                 g.add(MainGame.hungryPoints);
                 g.add(MainGame.happyPoints);
 
-                allSleepInfo.setText("Nastolatki (14-17 lat) powinny spać 8-10 godzin. \nMłodzież (18-25 lat) powinna spać 7-9 godzin. \nDorośli w wieku 26-64 lat powinni spać 7-9 godzin. \nDorośli w wieku 65 lat i więcej powinni spać 7-8 godzin na dobę");
+                allSleepInfo.setText(Subtitles.sleepInfo2);
                 allSleepInfo.setVisible(true);
                 allSleepInfo.setLocation(10, 200);
 
 
-                healthInfo.setText("\nNiedobory snu powodują, że myślimy mniej logicznie i podejmujemy ryzykowne decyzje. \nZłożone procesy myślowe przychodzą nam o wiele trudniej. \nMamy też zaburzenia nastroju, nie jesteśmy w stanie się skoncentrować, \npamięć szwankuje. Motywacja do działania - i w ogóle życia - znacząco spada. \nNasze reakcje są spowolnione, a kreatywność znacznie ograniczona. \nCo więcej, niedostateczna ilość snu powoduje gorsze działanie układu odpornościowego \n(immunologicznego)! Słowem - im mniej i gorzej śpimy, tym gorzej i mniej \nproduktywnie funkcjonujemy, a także częściej chorujemy.");
-                healthInfo.setVisible(true);
+
 
 
                 rozumiem.setVisible(true);
@@ -148,5 +151,13 @@ public class sleepClick implements ActionListener {
 
         g.add(sleepTime);
         g.setVisible(true);
+    }
+
+    public void NotEnoughSleep()
+    {
+        healthInfo.setText(Subtitles.notEnoughSleepInfo);
+        healthInfo.setVisible(true);
+        g.setVisible(true);
+
     }
 }

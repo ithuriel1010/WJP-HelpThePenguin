@@ -84,19 +84,19 @@ public class foodClick implements ActionListener {
         //foods.setBackground(Color.LIGHT_GRAY);
 
         JTextArea info = new JTextArea();
-        info.setText("Wybierz co ma zjeść pingwinek!");
+        info.setText(Subtitles.foodInfo1);
         info.setOpaque(false);
 
         JTextArea info2 = new JTextArea();
-        info2.setText("Pamiętaj że istotne jest co i ile jesz!");
+        info2.setText(Subtitles.foodInfo2);
         info2.setOpaque(false);
 
         JTextArea info3 = new JTextArea();
-        info3.setText("Zdrowa dieta jest bardzo ważna. Pamiętaj że mimo iż niektóre potrawy \nsą smaczne i poprawiją nam humor, nie zawsze są one zdrowe \nw nadmiernej ilości!");
+        info3.setText(Subtitles.foodInfo3);
         info3.setOpaque(false);
         info3.setVisible(true);
 
-        info4.setText("O nie! Pingwinek jest przekarmiony! Kiedy jesz niezdrowe jedzenie \n(lub nadmierną ilość zdrowego!) jest to dla ciebie niezdrowe. \nTeraz każda większa ilość jedzenia będzie zła dla pingwinka");
+        info4.setText(Subtitles.toMuchFood);
         info4.setOpaque(false);
         info4.setVisible(false);
 

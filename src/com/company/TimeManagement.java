@@ -52,7 +52,7 @@ public class TimeManagement implements Runnable {
         while(true)
         {
             try{
-                Thread.sleep(3000);
+                Thread.sleep(30000);
             } catch (Exception e)
             {
 

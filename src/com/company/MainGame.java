@@ -62,13 +62,13 @@ public class MainGame implements ActionListener {
 
         hungryPoints = new JTextArea();
         hungryPoints.setText("Health: "+ String.valueOf(hungry));
-        hungryPoints.setBounds(550,100,500,50);
+        hungryPoints.setBounds(550,50,500,50);
         hungryPoints.setOpaque(false);
         hungryPoints.setVisible(true);
 
         happyPoints = new JTextArea();
         happyPoints.setText("Mood: "+ String.valueOf(happy));
-        happyPoints.setBounds(550,150,500,50);
+        happyPoints.setBounds(550,75,500,50);
         happyPoints.setOpaque(false);
         happyPoints.setVisible(true);
 
@@ -92,8 +92,8 @@ public class MainGame implements ActionListener {
 
     public void TimePassed()
     {
-        hungry-=50;
-        happy-=50;
+        hungry-=25;
+        happy-=25;
 
         hungryPoints.setText("Health: "+ String.valueOf(hungry));
         happyPoints.setText("Mood: "+ String.valueOf(happy));

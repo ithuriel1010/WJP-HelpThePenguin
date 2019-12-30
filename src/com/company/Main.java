@@ -43,7 +43,9 @@ public class Main {
         instruction = new JTextArea();
         goToTheGame = new JButton();
         //instruction.setText(game.GetFromFile("./Rozpocznij.txt"));
-        instruction.setText("Witaj w grze 'Help the Penguin'! \nZasady gry nie są trudne: Musisz opiekować się pingwinkiem co nauczy cię troche \no zdrowiu psychicznym i co zrobić aby było ono jak najlepsze. \nPingwina możesz karmić, kłaść spać oraz wysyłać go na spotkania z przyjaciółmi. \nPamiętaj jednak że jedzenie i sen powinny być w zdrowej ilości! Monitoruj nastrój oraz zdrowie \npingwinka! Wzrastają one kiedy zrobisz coś dobrze i spadają kiedy twoja decyzja nie była najzdrowsza! \nGrając zobaczysz informacje o zdrowiu i o tym jak o nie dbać, pamiętaj jednak że to tylko gra! \nJeśli masz problem lub źle się czujesz porozmawiaj z kimś dorosłym! \nPóki co jednak życzę ci wspaniałej gry z pingwinkiem!!!");
+        //instruction.setText("Witaj w grze 'Help the Penguin'! \nZasady gry nie są trudne: Musisz opiekować się pingwinkiem co nauczy cię troche \no zdrowiu psychicznym i co zrobić aby było ono jak najlepsze. \nPingwina możesz karmić, kłaść spać oraz wysyłać go na spotkania z przyjaciółmi. \nPamiętaj jednak że jedzenie i sen powinny być w zdrowej ilości! Monitoruj nastrój oraz zdrowie \npingwinka! Wzrastają one kiedy zrobisz coś dobrze i spadają kiedy twoja decyzja nie była najzdrowsza! \nGrając zobaczysz informacje o zdrowiu i o tym jak o nie dbać, pamiętaj jednak że to tylko gra! \nJeśli masz problem lub źle się czujesz porozmawiaj z kimś dorosłym! \nPóki co jednak życzę ci wspaniałej gry z pingwinkiem!!!");
+
+        instruction.setText(Subtitles.firstInstruction);
         Font font = instruction.getFont();
         float size = font.getSize() + 20.0f;
         instruction.setFont( font.deriveFont(size) );

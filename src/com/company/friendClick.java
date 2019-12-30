@@ -74,7 +74,7 @@ public class friendClick implements ActionListener {
         info.setOpaque(false);
 
         JTextArea friendInfo = new JTextArea();
-        friendInfo.setText("Spotkania z przyjaciółmi lub rodziną są dla ciebie \n bardzo dobre! \n Musisz jednak pamiętać aby były to przyjaźnie \n zdrowe!");
+        friendInfo.setText(Subtitles.friendInfo);
         //friendInfo.setLocation(1000,200);
         //friendInfo.setBackground(Color.PINK);
         friendInfo.setForeground(Color.white);

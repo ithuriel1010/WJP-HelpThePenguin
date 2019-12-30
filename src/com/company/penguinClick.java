@@ -15,18 +15,19 @@ public class penguinClick implements ActionListener {
         gra2 = game;
         hugInfo.setEditable(false);
         hugInfo.setOpaque(false);
-        hugInfo.setText("Huggsy bardzo lubi przytulanie!");
-        hugInfo.setBounds(600,180,500,50);
+        hugInfo.setText(Subtitles.hugInfo);
+        hugInfo.setBounds(580,130,500,300);
         Font font = hugInfo.getFont();
         float size = font.getSize() + 10.0f;
         hugInfo.setFont( font.deriveFont(size) );
+        hugInfo.setForeground(Color.white);
     }
 
     boolean penguin_original = true;
     boolean penguin_original_with_friend = true;
     public void actionPerformed(ActionEvent e) {
        JButton b = (JButton) e.getSource();
-        Window w = new Window("X",25,25,22,65);
+        Window w = new Window();
 
         if(MainGame.isWithFriend==false)
         {
@@ -35,6 +36,8 @@ public class penguinClick implements ActionListener {
                 hugInfo.setVisible(true);
                 w.ButtonImage(b,"./CutePenguin3.png",515,300,false);
                 penguin_original=false;
+                gra2.add(hugInfo);
+                gra2.setVisible(true);
             }
             else if (penguin_original==false){
                 hugInfo.setVisible(false);
