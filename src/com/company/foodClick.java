@@ -194,7 +194,7 @@ public class foodClick implements ActionListener {
 //        info4.setVisible(false);
 //        foods.add(info4);
 //        g.add(foods);
-        MainGame.eatenFood-=100;
+        game.eatenFood-=100;
         if(game.eatenFood<=0)
         {
             game.eatenFood=0;

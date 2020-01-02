@@ -27,135 +27,135 @@ public class SelectFoodClick implements ActionListener {
         int foodConsumed2=0;
         int foodConsumedCalories = 0;
 
-        if(MainGame.eatenFood<=1500)
+        if(game2.eatenFood<=1500)
         {
             if (b==foodClick.pizza)
             {
                 foodConsumed+=FoodButtons.pizza.healthPoints;
-                MainGame.eatenFood+=FoodButtons.pizza.calories;
+                game2.eatenFood+=FoodButtons.pizza.calories;
                 game2.happy+=FoodButtons.pizza.happyPoints;
 
             }
             else if (b==foodClick.chicken)
             {
                 foodConsumed+=FoodButtons.chicken.healthPoints;
-                MainGame.eatenFood+=FoodButtons.chicken.calories;
+                game2.eatenFood+=FoodButtons.chicken.calories;
                 game2.happy+=FoodButtons.chicken.happyPoints;
 
             }
             else if (b==foodClick.sandwich)
             {
                 foodConsumed+=FoodButtons.sandwich.healthPoints;
-                MainGame.eatenFood+=FoodButtons.sandwich.calories;
+                game2.eatenFood+=FoodButtons.sandwich.calories;
                 game2.happy+=FoodButtons.sandwich.happyPoints;
 
             }
             else if (b==foodClick.pancake)
             {
                 foodConsumed+=FoodButtons.pancake.healthPoints;
-                MainGame.eatenFood+=FoodButtons.pancake.calories;
+                game2.eatenFood+=FoodButtons.pancake.calories;
                 game2.happy+=FoodButtons.pancake.happyPoints;
 
             }
             else if (b==foodClick.chocolate)
             {
                 foodConsumed+=FoodButtons.chocolate.healthPoints;
-                MainGame.eatenFood+=FoodButtons.chocolate.calories;
+                game2.eatenFood+=FoodButtons.chocolate.calories;
                 game2.happy+=FoodButtons.chocolate.happyPoints;
 
             }
             else if (b==foodClick.nuggets)
             {
                 foodConsumed+=FoodButtons.nuggets.healthPoints;
-                MainGame.eatenFood+=FoodButtons.nuggets.calories;
+                game2.eatenFood+=FoodButtons.nuggets.calories;
                 game2.happy+=FoodButtons.nuggets.happyPoints;
 
             }
             else if (b==foodClick.dinner)
             {
                 foodConsumed+=FoodButtons.dinner.healthPoints;
-                MainGame.eatenFood+=FoodButtons.dinner.calories;
+                game2.eatenFood+=FoodButtons.dinner.calories;
                 game2.happy+=FoodButtons.dinner.happyPoints;
 
             }
             else if (b==foodClick.fish)
             {
                 foodConsumed+=FoodButtons.fish.healthPoints;
-                MainGame.eatenFood+=FoodButtons.fish.calories;
+                game2.eatenFood+=FoodButtons.fish.calories;
                 game2.happy+=FoodButtons.fish.happyPoints;
 
             }
             else if (b==foodClick.salad)
             {
                 foodConsumed+=FoodButtons.salad.healthPoints;
-                MainGame.eatenFood+=FoodButtons.salad.calories;
+                game2.eatenFood+=FoodButtons.salad.calories;
                 game2.happy+=FoodButtons.salad.happyPoints;
 
             }
             game2.hungry+=foodConsumed;
         }
-        else if(MainGame.eatenFood>=1501)
+        else if(game2.eatenFood>=1501)
         {
             if (b==foodClick.pizza)
             {
                 foodConsumed2+=FoodButtons.pizza.healthPoints;
-                MainGame.eatenFood+=FoodButtons.pizza.calories;
+                game2.eatenFood+=FoodButtons.pizza.calories;
                 game2.happy-=FoodButtons.pizza.happyPoints;
 
             }
             else if (b==foodClick.chicken)
             {
                 foodConsumed2+=FoodButtons.chicken.healthPoints;
-                MainGame.eatenFood+=FoodButtons.chicken.calories;
+                game2.eatenFood+=FoodButtons.chicken.calories;
                 game2.happy-=FoodButtons.chicken.happyPoints;
 
             }
             else if (b==foodClick.sandwich)
             {
                 foodConsumed2+=FoodButtons.sandwich.healthPoints;
-                MainGame.eatenFood+=FoodButtons.sandwich.calories;
+                game2.eatenFood+=FoodButtons.sandwich.calories;
                 game2.happy-=FoodButtons.sandwich.happyPoints;
 
             }
             else if (b==foodClick.pancake)
             {
                 foodConsumed2+=FoodButtons.pancake.healthPoints;
-                MainGame.eatenFood+=FoodButtons.pancake.calories;
+                game2.eatenFood+=FoodButtons.pancake.calories;
                 game2.happy-=FoodButtons.pancake.happyPoints;
 
             }
             else if (b==foodClick.chocolate)
             {
                 foodConsumed2+=FoodButtons.chocolate.healthPoints;
-                MainGame.eatenFood+=FoodButtons.chocolate.calories;
+                game2.eatenFood+=FoodButtons.chocolate.calories;
                 game2.happy-=FoodButtons.chocolate.happyPoints;
 
             }
             else if (b==foodClick.nuggets)
             {
                 foodConsumed2+=FoodButtons.nuggets.healthPoints;
-                MainGame.eatenFood+=FoodButtons.nuggets.calories;
+                game2.eatenFood+=FoodButtons.nuggets.calories;
                 game2.happy-=FoodButtons.nuggets.happyPoints;
 
             }
             else if (b==foodClick.dinner)
             {
                 foodConsumed2+=FoodButtons.dinner.healthPoints;
-                MainGame.eatenFood+=FoodButtons.dinner.calories;
+                game2.eatenFood+=FoodButtons.dinner.calories;
                 game2.happy-=FoodButtons.dinner.happyPoints;
 
             }
             else if (b==foodClick.fish)
             {
                 foodConsumed2+=FoodButtons.fish.healthPoints;
-                MainGame.eatenFood+=FoodButtons.fish.calories;
+                game2.eatenFood+=FoodButtons.fish.calories;
                 game2.happy-=FoodButtons.fish.happyPoints;
 
             }
             else if (b==foodClick.salad)
             {
                 foodConsumed2+=FoodButtons.salad.healthPoints;
-                MainGame.eatenFood+=FoodButtons.salad.calories;
+                game2.eatenFood+=FoodButtons.salad.calories;
                 game2.happy-=FoodButtons.salad.happyPoints;
 
             }
