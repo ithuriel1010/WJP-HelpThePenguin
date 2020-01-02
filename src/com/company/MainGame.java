@@ -9,7 +9,7 @@ import java.io.File;
 
 public class MainGame implements ActionListener {
 
-    public static int hungry = 500;
+    public int hungry = 500;
     public static int happy = 500;
     public static int eatenFood = 0;
     public static JTextArea hungryPoints;
@@ -57,7 +57,7 @@ public class MainGame implements ActionListener {
 
         penguin.addActionListener(new penguinClick(game));
         food.addActionListener(new foodClick(game, penguin, time, this));
-        sleep.addActionListener(new sleepClick(game, penguin));
+        sleep.addActionListener(new sleepClick(game, penguin,this));
         friend.addActionListener(new friendClick(game, penguin));
 
         hungryPoints = new JTextArea();

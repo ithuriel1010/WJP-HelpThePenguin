@@ -9,12 +9,14 @@ public class SelectFoodClick implements ActionListener {
     foodClick fc1;
     Window game;
     private TimeManagement time;
+    MainGame game2;
 
-    SelectFoodClick(Window game, foodClick fc, TimeManagement time)
+    SelectFoodClick(Window game, foodClick fc, TimeManagement time, MainGame game2)
     {
         this.game=game;
         fc1 = fc;
         this.time=time;
+        this.game2=game2;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -90,7 +92,7 @@ public class SelectFoodClick implements ActionListener {
                 MainGame.happy+=FoodButtons.salad.happyPoints;
 
             }
-            MainGame.hungry+=foodConsumed;
+            game2.hungry+=foodConsumed;
         }
         else if(MainGame.eatenFood>=1501)
         {
@@ -158,7 +160,7 @@ public class SelectFoodClick implements ActionListener {
 
             }
 
-            MainGame.hungry-=foodConsumed2;
+            game2.hungry-=foodConsumed2;
 //
             fc1.TooMuchFood();
 //            JTextArea info4 = new JTextArea();
@@ -173,7 +175,7 @@ public class SelectFoodClick implements ActionListener {
         }
 
 
-        MainGame.hungryPoints.setText("Health: "+ String.valueOf(MainGame.hungry));
+        MainGame.hungryPoints.setText("Health: "+ String.valueOf(game2.hungry));
         MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
 
         game.add(MainGame.hungryPoints);

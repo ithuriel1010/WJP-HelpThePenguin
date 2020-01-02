@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
 
 public class penguinClick implements ActionListener {
 
-    Window gra2;
+    Window gra;
     JTextArea hugInfo = new JTextArea();
 
     public penguinClick(Window game)
     {
-        gra2 = game;
+        gra = game;
         hugInfo.setEditable(false);
         hugInfo.setOpaque(false);
         hugInfo.setText(Subtitles.hugInfo);
@@ -21,7 +21,7 @@ public class penguinClick implements ActionListener {
         float size = font.getSize() + 10.0f;
         hugInfo.setFont( font.deriveFont(size) );
         hugInfo.setForeground(Color.white);
-        gra2.add(hugInfo);
+        gra.add(hugInfo);
         hugInfo.setVisible(false);
     }
 
@@ -36,7 +36,7 @@ public class penguinClick implements ActionListener {
             if(penguin_original==true)
             {
                 w.ButtonImage(b,"./CutePenguin3.png",515,300,false);
-                gra2.setVisible(true);
+                gra.setVisible(true);
                 hugInfo.setVisible(true);
                 penguin_original=false;
             }
@@ -45,8 +45,8 @@ public class penguinClick implements ActionListener {
                 w.ButtonImage(b, "./Pengiun2.png", 480, 285, false);
                 penguin_original = true;
             }
-            gra2.add(hugInfo);
-            gra2.setVisible(true);
+            gra.add(hugInfo);
+            gra.setVisible(true);
         }
         else if(MainGame.isWithFriend==true)
         {
@@ -63,7 +63,7 @@ public class penguinClick implements ActionListener {
             }
             //hugInfo.setVisible(true);
             //gra2.add(hugInfo);
-            gra2.setVisible(true);
+            gra.setVisible(true);
         }
 
     }

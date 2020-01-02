@@ -13,12 +13,10 @@ import static javax.print.attribute.standard.MediaSize.JIS.B1;
 
 public class Main {
 
-
-    public static JTextArea instruction;
-    public static JButton goToTheGame;
-
     public static void main(String[] args) {
 
+        JTextArea instruction;
+        JButton goToTheGame;
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();

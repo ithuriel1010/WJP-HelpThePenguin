@@ -16,12 +16,14 @@ public class sleepClick implements ActionListener {
     public Window w;
     public JButton penguin2;
     public JTextArea healthInfo;
+    private MainGame game;
 
 
-    public sleepClick(Window gameWindow, JButton penguin) {
+    public sleepClick(Window gameWindow, JButton penguin,MainGame game) {
         g = gameWindow;
         w = new Window();
         penguin2 = penguin;
+        this.game=game;
     }
 
     private class TransparentPanel extends JPanel {
@@ -88,7 +90,7 @@ public class sleepClick implements ActionListener {
                     if (iloscSnui < 8) {
                         sleepinfo.setText(Subtitles.tooLittleSleep);
                         MainGame.happy-=100;
-                        MainGame.hungry-=100;
+                        game.hungry-=100;
                         NotEnoughSleep();
 //                        healthInfo.setVisible(true);
 //                        sleepTime.add(healthInfo);
@@ -96,11 +98,11 @@ public class sleepClick implements ActionListener {
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
                         sleepinfo.setText(Subtitles.enoughSleep);
                         MainGame.happy+=100;
-                        MainGame.hungry+=100;
+                        game.hungry+=100;
                     } else if (iloscSnui > 10) {
                         sleepinfo.setText(Subtitles.tooMuchSleep);
                         MainGame.happy-=100;
-                        MainGame.hungry-=100;
+                        game.hungry-=100;
                     } else {
                         sleepinfo.setText(Subtitles.incorrectValue);
                     }
@@ -109,7 +111,7 @@ public class sleepClick implements ActionListener {
                     sleepinfo.setText("Wpisz poprawną wartość");
                 }
 
-                MainGame.hungryPoints.setText("Health: "+ String.valueOf(MainGame.hungry));
+                MainGame.hungryPoints.setText("Health: "+ String.valueOf(game.hungry));
                 MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
 
                 g.add(MainGame.hungryPoints);
