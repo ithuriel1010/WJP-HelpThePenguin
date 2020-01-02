@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class foodClick implements ActionListener {
+public class FoodClick implements ActionListener {
 
     public Window g;
     public Window w;
@@ -26,7 +26,7 @@ public class foodClick implements ActionListener {
     private MainGame game;
 
 
-    public foodClick(Window gameWindow, JButton penguin, TimeManagement time, MainGame game) {
+    public FoodClick(Window gameWindow, JButton penguin, TimeManagement time, MainGame game) {
         g = gameWindow;
         w = new Window();
         this.time=time;
@@ -37,7 +37,7 @@ public class foodClick implements ActionListener {
         this.game=game;
     }
 
-    public foodClick() {
+    public FoodClick() {
 
     }
 

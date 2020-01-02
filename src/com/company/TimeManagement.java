@@ -4,42 +4,42 @@ public class TimeManagement implements Runnable {
 
     public long startTime;
     public long feedTime;
-    public long timefromlastmeal;
-    public double timefromlastmealseconds;
+    //public long timefromlastmeal;
+    //public double timefromlastmealseconds;
 
-    private foodClick food;
+    private FoodClick food;
     private MainGame game;
 
 
 
 
-    public void TimeFunction1()
+    //public void TimeFunction1()
     {
         startTime=System.currentTimeMillis();
     }
 
-    public void TimeFunction2()
-    {
-        feedTime=System.currentTimeMillis();
-    }
-
-//    public void TimeFromLastMeal()
+//    public void TimeFunction2()
 //    {
-//        if(feedTime==0)
-//        {
-//            return;
-//        }
-//        timefromlastmeal=System.currentTimeMillis()-feedTime;
-//        timefromlastmealseconds=timefromlastmeal/1000.0;
-//
-//        if(timefromlastmealseconds>=30.0)
-//        {
-//            //System.out.println("kkkkkkkkkkkkkkkkkkkkkkkk");
-//            food.PenguinCanEat();
-//        }
+//        feedTime=System.currentTimeMillis();
 //    }
+//
+////    public void TimeFromLastMeal()
+////    {
+////        if(feedTime==0)
+////        {
+////            return;
+////        }
+////        timefromlastmeal=System.currentTimeMillis()-feedTime;
+////        timefromlastmealseconds=timefromlastmeal/1000.0;
+////
+////        if(timefromlastmealseconds>=30.0)
+////        {
+////            //System.out.println("kkkkkkkkkkkkkkkkkkkkkkkk");
+////            food.PenguinCanEat();
+////        }
+////    }
 
-    public void setFood(foodClick food) {
+    public void setFood(FoodClick food) {
         this.food = food;
     }
 

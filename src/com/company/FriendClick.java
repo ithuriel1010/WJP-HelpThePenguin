@@ -7,17 +7,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-public class friendClick implements ActionListener {
+public class FriendClick implements ActionListener {
 
-    public Window g;
+    public Window gameWindow;
     public JButton penguin;
     public JButton panda = new JButton();
     public JButton leave = new JButton();
     public MainGame game;
 
 
-    public friendClick(Window gameWindow, JButton penguin, MainGame game) {
-        g = gameWindow;
+    public FriendClick(Window gameWindow, JButton penguin, MainGame game) {
+        this.gameWindow = gameWindow;
         this.penguin=penguin;
         this.game=game;
     }
@@ -27,43 +27,43 @@ public class friendClick implements ActionListener {
         game.isWithFriend=true;
         try
         {
-            g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./Cartoon_Forest_BG_02.png")))));
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./Cartoon_Forest_BG_02.png")))));
         }
         catch(Exception m)
         {
             System.out.println("Błąd pliku backgroung");
         }
 
-        g.ButtonImage(penguin,"./veryHappy2.png",350,350,false);
-        g.ButtonImage(panda,"./HappyPanda2.png",650,350,false);
+        gameWindow.ButtonImage(penguin,"./veryHappy2.png",350,350,false);
+        gameWindow.ButtonImage(panda,"./HappyPanda2.png",650,350,false);
 
-        g.ButtonImage(leave,"./Lave.png",0,0,true);
+        gameWindow.ButtonImage(leave,"./Lave.png",0,0,true);
         leave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 game.isWithFriend=false;
-                g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
+                gameWindow.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
 
                 try
                 {
-                    g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
+                    gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
                 }
                 catch(Exception m)
                 {
                     System.out.println("Błąd pliku backgroung");
                 }
 
-                g.remove(panda);
-                g.remove(leave);
+                gameWindow.remove(panda);
+                gameWindow.remove(leave);
 
-                g.add(game.food);
-                g.add(game.sleep);
-                g.add(game.friend);
-                g.add(penguin);
-                g.add(game.hungryPoints);
-                g.add(game.happyPoints);
-                g.setVisible(true);
+                gameWindow.add(game.food);
+                gameWindow.add(game.sleep);
+                gameWindow.add(game.friend);
+                gameWindow.add(penguin);
+                gameWindow.add(game.healthPoints);
+                gameWindow.add(game.happyPoints);
+                gameWindow.setVisible(true);
 
 
 
@@ -91,15 +91,15 @@ public class friendClick implements ActionListener {
         float size = font.getSize() + 13.0f;
         friendInfo.setFont( font.deriveFont(size) );
 
-        panda.addActionListener(new pandaClick(g));
+        panda.addActionListener(new PandaClick(gameWindow));
 
-        g.add(penguin);
-        g.add(panda);
-        g.add(game.happyPoints);
-        g.add(game.hungryPoints);
-        g.add(leave);
-        g.add(info);
+        gameWindow.add(penguin);
+        gameWindow.add(panda);
+        gameWindow.add(game.happyPoints);
+        gameWindow.add(game.healthPoints);
+        gameWindow.add(leave);
+        gameWindow.add(info);
 
-        g.setVisible(true);
+        gameWindow.setVisible(true);
     }
 }

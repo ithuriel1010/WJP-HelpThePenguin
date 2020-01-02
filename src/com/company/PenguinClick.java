@@ -5,15 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class penguinClick implements ActionListener {
+public class PenguinClick implements ActionListener {
 
-    Window gra;
+    Window gameWindow;
     JTextArea hugInfo = new JTextArea();
-    public MainGame game2;
+    public MainGame game;
 
-    public penguinClick(Window game, MainGame game2)
+    public PenguinClick(Window gameWindow, MainGame game)
     {
-        gra = game;
+        gameWindow = gameWindow;
         hugInfo.setEditable(false);
         hugInfo.setOpaque(false);
         hugInfo.setText(Subtitles.hugInfo);
@@ -22,9 +22,9 @@ public class penguinClick implements ActionListener {
         float size = font.getSize() + 10.0f;
         hugInfo.setFont( font.deriveFont(size) );
         hugInfo.setForeground(Color.white);
-        gra.add(hugInfo);
+        gameWindow.add(hugInfo);
         hugInfo.setVisible(false);
-        this.game2=game2;
+        this.game =game;
     }
 
     boolean penguin_original = true;
@@ -33,12 +33,12 @@ public class penguinClick implements ActionListener {
        JButton b = (JButton) e.getSource();
         Window w = new Window();
 
-        if(game2.isWithFriend==false)
+        if(game.isWithFriend==false)
         {
             if(penguin_original==true)
             {
                 w.ButtonImage(b,"./CutePenguin3.png",515,300,false);
-                gra.setVisible(true);
+                gameWindow.setVisible(true);
                 hugInfo.setVisible(true);
                 penguin_original=false;
             }
@@ -47,10 +47,10 @@ public class penguinClick implements ActionListener {
                 w.ButtonImage(b, "./Pengiun2.png", 480, 285, false);
                 penguin_original = true;
             }
-            gra.add(hugInfo);
-            gra.setVisible(true);
+            gameWindow.add(hugInfo);
+            gameWindow.setVisible(true);
         }
-        else if(game2.isWithFriend==true)
+        else if(game.isWithFriend==true)
         {
             if(penguin_original_with_friend==true)
             {
@@ -65,7 +65,7 @@ public class penguinClick implements ActionListener {
             }
             //hugInfo.setVisible(true);
             //gra2.add(hugInfo);
-            gra.setVisible(true);
+            gameWindow.setVisible(true);
         }
 
     }

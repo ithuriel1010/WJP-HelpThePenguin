@@ -1,16 +1,15 @@
 package com.company;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class pandaClick implements ActionListener {
+public class PandaClick implements ActionListener {
 
-    Window gra2;
-    public pandaClick(Window game)
+    Window gameWindow;
+    public PandaClick(Window game)
     {
-        gra2 = game;
+        gameWindow = game;
     }
 
     boolean panda_original = true;
@@ -28,7 +27,7 @@ public class pandaClick implements ActionListener {
             panda_original = true;
         }
 
-        gra2.setVisible(true);
+        gameWindow.setVisible(true);
 
     }
 

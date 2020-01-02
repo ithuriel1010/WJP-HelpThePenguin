@@ -4,24 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.concurrent.TimeUnit;
 
 
-public class sleepClick implements ActionListener {
-    public Window g;
-    public Window w;
+public class SleepClick implements ActionListener {
+    public Window gameWindow;
+    //public Window w;
     public JButton penguin2;
     public JTextArea healthInfo;
     private MainGame game;
 
 
-    public sleepClick(Window gameWindow, JButton penguin,MainGame game) {
-        g = gameWindow;
-        w = new Window();
+    public SleepClick(Window gameWindow, JButton penguin, MainGame game) {
+        this.gameWindow = gameWindow;
+        //w = new Window();
         penguin2 = penguin;
         this.game=game;
     }
@@ -80,7 +75,7 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
-                w.ButtonImage(penguin2, "./SleepingPenguin2.png", 500, 275, false);
+                gameWindow.ButtonImage(penguin2, "./SleepingPenguin2.png", 500, 275, false);
 
 
                 try {
@@ -90,7 +85,7 @@ public class sleepClick implements ActionListener {
                     if (iloscSnui < 8) {
                         sleepinfo.setText(Subtitles.tooLittleSleep);
                         game.happy-=100;
-                        game.hungry-=100;
+                        game.health -=100;
                         NotEnoughSleep();
 //                        healthInfo.setVisible(true);
 //                        sleepTime.add(healthInfo);
@@ -98,11 +93,11 @@ public class sleepClick implements ActionListener {
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
                         sleepinfo.setText(Subtitles.enoughSleep);
                         game.happy+=100;
-                        game.hungry+=100;
+                        game.health +=100;
                     } else if (iloscSnui > 10) {
                         sleepinfo.setText(Subtitles.tooMuchSleep);
                         game.happy-=100;
-                        game.hungry-=100;
+                        game.health -=100;
                     } else {
                         sleepinfo.setText(Subtitles.incorrectValue);
                     }
@@ -111,11 +106,11 @@ public class sleepClick implements ActionListener {
                     sleepinfo.setText("Wpisz poprawną wartość");
                 }
 
-                game.hungryPoints.setText("Health: "+ String.valueOf(game.hungry));
+                game.healthPoints.setText("Health: "+ String.valueOf(game.health));
                 game.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
 
-                g.add(game.hungryPoints);
-                g.add(game.happyPoints);
+                gameWindow.add(game.healthPoints);
+                gameWindow.add(game.happyPoints);
 
                 allSleepInfo.setText(Subtitles.sleepInfo2);
                 allSleepInfo.setVisible(true);
@@ -135,8 +130,8 @@ public class sleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 sleepTime.setVisible(false);
                 //allSleepInfo.setVisible(false);
-                w.ButtonImage(penguin2, "./Pengiun2.png", 500, 275, false);
-                g.remove(sleepTime);
+                gameWindow.ButtonImage(penguin2, "./Pengiun2.png", 500, 275, false);
+                gameWindow.remove(sleepTime);
             }
         });
 
@@ -151,15 +146,15 @@ public class sleepClick implements ActionListener {
         sleepTime.add(healthInfo);
         sleepTime.setVisible(true);
 
-        g.add(sleepTime);
-        g.setVisible(true);
+        gameWindow.add(sleepTime);
+        gameWindow.setVisible(true);
     }
 
     public void NotEnoughSleep()
     {
         healthInfo.setText(Subtitles.notEnoughSleepInfo);
         healthInfo.setVisible(true);
-        g.setVisible(true);
+        gameWindow.setVisible(true);
 
     }
 }

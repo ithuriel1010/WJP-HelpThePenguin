@@ -9,31 +9,31 @@ import java.io.File;
 
 public class MainGame implements ActionListener {
 
-    public int hungry = 500;
+    public int health = 500;
     public int happy = 500;
     public int eatenFood = 0;
-    public JTextArea hungryPoints;
+    public JTextArea healthPoints;
     public JTextArea happyPoints;
     public boolean isWithFriend=false;
     public JButton food = new JButton();
     public JButton sleep = new JButton();
     public JButton friend = new JButton();
     public JButton penguin = new JButton();
-    public Window game;
+    public Window gameWindow;
     public JTextArea instruction;
     public JButton goToTheGame;
     public TimeManagement time = new TimeManagement();
 
     public MainGame(Window gameWindow, JTextArea instruction, JButton goToTheGame) {
-        game = gameWindow;
+        this.gameWindow = gameWindow;
         this.goToTheGame=goToTheGame;
         this.instruction=instruction;
     }
 
     public void actionPerformed(ActionEvent e)
     {
-        game.remove(instruction);
-        game.remove(goToTheGame);
+        gameWindow.remove(instruction);
+        gameWindow.remove(goToTheGame);
 
         Thread t = new Thread(time);
         time.setGame(this);
@@ -43,28 +43,28 @@ public class MainGame implements ActionListener {
 
         try
         {
-            game.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
         }
         catch(Exception h)
         {
             System.out.println("Błąd pliku backgroung");
         }
 
-        game.ButtonImage(food, "./Eggs.png",1300,0,true);
-        game.ButtonImage(sleep,"./SleepCloud.png",1300,220,true);
-        game.ButtonImage(friend,"./Panda2.png",1300,440,true);
-        game.ButtonImage(penguin,"./Pengiun2.png",480,285,false);
+        gameWindow.ButtonImage(food, "./Eggs.png",1300,0,true);
+        gameWindow.ButtonImage(sleep,"./SleepCloud.png",1300,220,true);
+        gameWindow.ButtonImage(friend,"./Panda2.png",1300,440,true);
+        gameWindow.ButtonImage(penguin,"./Pengiun2.png",480,285,false);
 
-        penguin.addActionListener(new penguinClick(game, this));
-        food.addActionListener(new foodClick(game, penguin, time, this));
-        sleep.addActionListener(new sleepClick(game, penguin,this));
-        friend.addActionListener(new friendClick(game, penguin,this));
+        penguin.addActionListener(new PenguinClick(gameWindow, this));
+        food.addActionListener(new FoodClick(gameWindow, penguin, time, this));
+        sleep.addActionListener(new SleepClick(gameWindow, penguin,this));
+        friend.addActionListener(new FriendClick(gameWindow, penguin,this));
 
-        hungryPoints = new JTextArea();
-        hungryPoints.setText("Health: "+ String.valueOf(hungry));
-        hungryPoints.setBounds(550,50,500,50);
-        hungryPoints.setOpaque(false);
-        hungryPoints.setVisible(true);
+        healthPoints = new JTextArea();
+        healthPoints.setText("Health: "+ String.valueOf(health));
+        healthPoints.setBounds(550,50,500,50);
+        healthPoints.setOpaque(false);
+        healthPoints.setVisible(true);
 
         happyPoints = new JTextArea();
         happyPoints.setText("Mood: "+ String.valueOf(happy));
@@ -72,34 +72,34 @@ public class MainGame implements ActionListener {
         happyPoints.setOpaque(false);
         happyPoints.setVisible(true);
 
-        Font font = hungryPoints.getFont();
+        Font font = healthPoints.getFont();
         float size = font.getSize() + 10.0f;
-        hungryPoints.setFont( font.deriveFont(size) );
+        healthPoints.setFont( font.deriveFont(size) );
         happyPoints.setFont( font.deriveFont(size) );
-        hungryPoints.setForeground(Color.white);
+        healthPoints.setForeground(Color.white);
         happyPoints.setForeground(Color.white);
 
 
 
-        game.add(food);
-        game.add(sleep);
-        game.add(friend);
-        game.add(penguin);
-        game.add(hungryPoints);
-        game.add(happyPoints);
+        gameWindow.add(food);
+        gameWindow.add(sleep);
+        gameWindow.add(friend);
+        gameWindow.add(penguin);
+        gameWindow.add(healthPoints);
+        gameWindow.add(happyPoints);
 
     }
 
     public void TimePassed()
     {
-        hungry-=25;
+        health -=25;
         happy-=25;
 
-        hungryPoints.setText("Health: "+ String.valueOf(hungry));
+        healthPoints.setText("Health: "+ String.valueOf(health));
         happyPoints.setText("Mood: "+ String.valueOf(happy));
 
-        game.add(hungryPoints);
-        game.add(happyPoints);
+        gameWindow.add(healthPoints);
+        gameWindow.add(happyPoints);
 
     }
 }
