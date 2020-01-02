@@ -89,7 +89,7 @@ public class sleepClick implements ActionListener {
 
                     if (iloscSnui < 8) {
                         sleepinfo.setText(Subtitles.tooLittleSleep);
-                        MainGame.happy-=100;
+                        game.happy-=100;
                         game.hungry-=100;
                         NotEnoughSleep();
 //                        healthInfo.setVisible(true);
@@ -97,11 +97,11 @@ public class sleepClick implements ActionListener {
 
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
                         sleepinfo.setText(Subtitles.enoughSleep);
-                        MainGame.happy+=100;
+                        game.happy+=100;
                         game.hungry+=100;
                     } else if (iloscSnui > 10) {
                         sleepinfo.setText(Subtitles.tooMuchSleep);
-                        MainGame.happy-=100;
+                        game.happy-=100;
                         game.hungry-=100;
                     } else {
                         sleepinfo.setText(Subtitles.incorrectValue);
@@ -112,7 +112,7 @@ public class sleepClick implements ActionListener {
                 }
 
                 MainGame.hungryPoints.setText("Health: "+ String.valueOf(game.hungry));
-                MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
+                MainGame.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
 
                 g.add(MainGame.hungryPoints);
                 g.add(MainGame.happyPoints);

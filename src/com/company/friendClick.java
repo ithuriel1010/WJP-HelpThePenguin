@@ -13,12 +13,13 @@ public class friendClick implements ActionListener {
     public JButton penguin;
     public JButton panda = new JButton();
     public JButton leave = new JButton();
+    public MainGame game;
 
 
-
-    public friendClick(Window gameWindow, JButton penguin) {
+    public friendClick(Window gameWindow, JButton penguin, MainGame game) {
         g = gameWindow;
         this.penguin=penguin;
+        this.game=game;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -82,8 +83,8 @@ public class friendClick implements ActionListener {
         friendInfo.setVisible(true);
 
 
-        MainGame.happy+=500;
-        MainGame.happyPoints.setText("Mood: "+ String.valueOf(MainGame.happy));
+        game.happy+=500;
+        MainGame.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
         info.add(friendInfo);
 
         Font font = friendInfo.getFont();
