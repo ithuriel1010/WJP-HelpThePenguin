@@ -8,20 +8,20 @@ import java.awt.event.ActionListener;
 public class foodClick implements ActionListener {
 
     public Window g;
-    public static Window w;
-    public static JButton penguin;
+    public Window w;
+    public JButton penguin;
     //public JPanel foods = new JPanel();
     final JPanel foods = new TransparentPanel();
     public  JTextArea info4 = new JTextArea();
-    static public JButton pizza;
-    static public JButton chicken;
-    static public JButton sandwich;
-    static public JButton pancake;
-    static public JButton chocolate;
-    static public JButton nuggets;
-    static public JButton dinner;
-    static public JButton fish;
-    static public JButton salad;
+    public JButton pizza;
+    public JButton chicken;
+    public JButton sandwich;
+    public JButton pancake;
+    public JButton chocolate;
+    public JButton nuggets;
+    public JButton dinner;
+    public JButton fish;
+    public JButton salad;
     private TimeManagement time;
     private MainGame game;
 

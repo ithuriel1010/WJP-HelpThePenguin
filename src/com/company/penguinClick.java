@@ -9,8 +9,9 @@ public class penguinClick implements ActionListener {
 
     Window gra;
     JTextArea hugInfo = new JTextArea();
+    public MainGame game2;
 
-    public penguinClick(Window game)
+    public penguinClick(Window game, MainGame game2)
     {
         gra = game;
         hugInfo.setEditable(false);
@@ -23,6 +24,7 @@ public class penguinClick implements ActionListener {
         hugInfo.setForeground(Color.white);
         gra.add(hugInfo);
         hugInfo.setVisible(false);
+        this.game2=game2;
     }
 
     boolean penguin_original = true;
@@ -31,7 +33,7 @@ public class penguinClick implements ActionListener {
        JButton b = (JButton) e.getSource();
         Window w = new Window();
 
-        if(MainGame.isWithFriend==false)
+        if(game2.isWithFriend==false)
         {
             if(penguin_original==true)
             {
@@ -48,7 +50,7 @@ public class penguinClick implements ActionListener {
             gra.add(hugInfo);
             gra.setVisible(true);
         }
-        else if(MainGame.isWithFriend==true)
+        else if(game2.isWithFriend==true)
         {
             if(penguin_original_with_friend==true)
             {

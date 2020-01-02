@@ -14,11 +14,11 @@ public class MainGame implements ActionListener {
     public int eatenFood = 0;
     public JTextArea hungryPoints;
     public JTextArea happyPoints;
-    public static boolean isWithFriend=false;
-    public static JButton food = new JButton();
-    public static JButton sleep = new JButton();
-    public static JButton friend = new JButton();
-    public static JButton penguin = new JButton();
+    public boolean isWithFriend=false;
+    public JButton food = new JButton();
+    public JButton sleep = new JButton();
+    public JButton friend = new JButton();
+    public JButton penguin = new JButton();
     public Window game;
     public JTextArea instruction;
     public JButton goToTheGame;
@@ -55,7 +55,7 @@ public class MainGame implements ActionListener {
         game.ButtonImage(friend,"./Panda2.png",1300,440,true);
         game.ButtonImage(penguin,"./Pengiun2.png",480,285,false);
 
-        penguin.addActionListener(new penguinClick(game));
+        penguin.addActionListener(new penguinClick(game, this));
         food.addActionListener(new foodClick(game, penguin, time, this));
         sleep.addActionListener(new sleepClick(game, penguin,this));
         friend.addActionListener(new friendClick(game, penguin,this));

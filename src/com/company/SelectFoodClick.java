@@ -6,15 +6,16 @@ import java.awt.event.ActionListener;
 
 public class SelectFoodClick implements ActionListener {
 
-    foodClick fc1;
+    //foodClick fc1;
     Window game;
     private TimeManagement time;
     MainGame game2;
+    foodClick food;
 
-    SelectFoodClick(Window game, foodClick fc, TimeManagement time, MainGame game2)
+    SelectFoodClick(Window game, foodClick food, TimeManagement time, MainGame game2)
     {
         this.game=game;
-        fc1 = fc;
+        this.food = food;
         this.time=time;
         this.game2=game2;
     }
@@ -29,63 +30,63 @@ public class SelectFoodClick implements ActionListener {
 
         if(game2.eatenFood<=1500)
         {
-            if (b==foodClick.pizza)
+            if (b==food.pizza)
             {
                 foodConsumed+=FoodButtons.pizza.healthPoints;
                 game2.eatenFood+=FoodButtons.pizza.calories;
                 game2.happy+=FoodButtons.pizza.happyPoints;
 
             }
-            else if (b==foodClick.chicken)
+            else if (b==food.chicken)
             {
                 foodConsumed+=FoodButtons.chicken.healthPoints;
                 game2.eatenFood+=FoodButtons.chicken.calories;
                 game2.happy+=FoodButtons.chicken.happyPoints;
 
             }
-            else if (b==foodClick.sandwich)
+            else if (b==food.sandwich)
             {
                 foodConsumed+=FoodButtons.sandwich.healthPoints;
                 game2.eatenFood+=FoodButtons.sandwich.calories;
                 game2.happy+=FoodButtons.sandwich.happyPoints;
 
             }
-            else if (b==foodClick.pancake)
+            else if (b==food.pancake)
             {
                 foodConsumed+=FoodButtons.pancake.healthPoints;
                 game2.eatenFood+=FoodButtons.pancake.calories;
                 game2.happy+=FoodButtons.pancake.happyPoints;
 
             }
-            else if (b==foodClick.chocolate)
+            else if (b==food.chocolate)
             {
                 foodConsumed+=FoodButtons.chocolate.healthPoints;
                 game2.eatenFood+=FoodButtons.chocolate.calories;
                 game2.happy+=FoodButtons.chocolate.happyPoints;
 
             }
-            else if (b==foodClick.nuggets)
+            else if (b==food.nuggets)
             {
                 foodConsumed+=FoodButtons.nuggets.healthPoints;
                 game2.eatenFood+=FoodButtons.nuggets.calories;
                 game2.happy+=FoodButtons.nuggets.happyPoints;
 
             }
-            else if (b==foodClick.dinner)
+            else if (b==food.dinner)
             {
                 foodConsumed+=FoodButtons.dinner.healthPoints;
                 game2.eatenFood+=FoodButtons.dinner.calories;
                 game2.happy+=FoodButtons.dinner.happyPoints;
 
             }
-            else if (b==foodClick.fish)
+            else if (b==food.fish)
             {
                 foodConsumed+=FoodButtons.fish.healthPoints;
                 game2.eatenFood+=FoodButtons.fish.calories;
                 game2.happy+=FoodButtons.fish.happyPoints;
 
             }
-            else if (b==foodClick.salad)
+            else if (b==food.salad)
             {
                 foodConsumed+=FoodButtons.salad.healthPoints;
                 game2.eatenFood+=FoodButtons.salad.calories;
@@ -96,63 +97,63 @@ public class SelectFoodClick implements ActionListener {
         }
         else if(game2.eatenFood>=1501)
         {
-            if (b==foodClick.pizza)
+            if (b==food.pizza)
             {
                 foodConsumed2+=FoodButtons.pizza.healthPoints;
                 game2.eatenFood+=FoodButtons.pizza.calories;
                 game2.happy-=FoodButtons.pizza.happyPoints;
 
             }
-            else if (b==foodClick.chicken)
+            else if (b==food.chicken)
             {
                 foodConsumed2+=FoodButtons.chicken.healthPoints;
                 game2.eatenFood+=FoodButtons.chicken.calories;
                 game2.happy-=FoodButtons.chicken.happyPoints;
 
             }
-            else if (b==foodClick.sandwich)
+            else if (b==food.sandwich)
             {
                 foodConsumed2+=FoodButtons.sandwich.healthPoints;
                 game2.eatenFood+=FoodButtons.sandwich.calories;
                 game2.happy-=FoodButtons.sandwich.happyPoints;
 
             }
-            else if (b==foodClick.pancake)
+            else if (b==food.pancake)
             {
                 foodConsumed2+=FoodButtons.pancake.healthPoints;
                 game2.eatenFood+=FoodButtons.pancake.calories;
                 game2.happy-=FoodButtons.pancake.happyPoints;
 
             }
-            else if (b==foodClick.chocolate)
+            else if (b==food.chocolate)
             {
                 foodConsumed2+=FoodButtons.chocolate.healthPoints;
                 game2.eatenFood+=FoodButtons.chocolate.calories;
                 game2.happy-=FoodButtons.chocolate.happyPoints;
 
             }
-            else if (b==foodClick.nuggets)
+            else if (b==food.nuggets)
             {
                 foodConsumed2+=FoodButtons.nuggets.healthPoints;
                 game2.eatenFood+=FoodButtons.nuggets.calories;
                 game2.happy-=FoodButtons.nuggets.happyPoints;
 
             }
-            else if (b==foodClick.dinner)
+            else if (b==food.dinner)
             {
                 foodConsumed2+=FoodButtons.dinner.healthPoints;
                 game2.eatenFood+=FoodButtons.dinner.calories;
                 game2.happy-=FoodButtons.dinner.happyPoints;
 
             }
-            else if (b==foodClick.fish)
+            else if (b==food.fish)
             {
                 foodConsumed2+=FoodButtons.fish.healthPoints;
                 game2.eatenFood+=FoodButtons.fish.calories;
                 game2.happy-=FoodButtons.fish.happyPoints;
 
             }
-            else if (b==foodClick.salad)
+            else if (b==food.salad)
             {
                 foodConsumed2+=FoodButtons.salad.healthPoints;
                 game2.eatenFood+=FoodButtons.salad.calories;
@@ -162,7 +163,7 @@ public class SelectFoodClick implements ActionListener {
 
             game2.hungry-=foodConsumed2;
 //
-            fc1.TooMuchFood();
+            food.TooMuchFood();
 //            JTextArea info4 = new JTextArea();
 //
 //            info4.setText("O nie! Pingwinek jest przekarmiony! Kiedy jesz niezdrowe jedzenie \n(lub nadmierną ilość zdrowego!) jest to dla ciebie niezdrowe. \nTeraz każda większa ilość jedzenia będzie zła dla pingwinka");

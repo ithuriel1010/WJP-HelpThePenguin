@@ -24,7 +24,7 @@ public class friendClick implements ActionListener {
 
     public void actionPerformed(ActionEvent e)
     {
-        MainGame.isWithFriend=true;
+        game.isWithFriend=true;
         try
         {
             g.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./Cartoon_Forest_BG_02.png")))));
@@ -42,7 +42,7 @@ public class friendClick implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                MainGame.isWithFriend=false;
+                game.isWithFriend=false;
                 g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
 
                 try
@@ -57,9 +57,9 @@ public class friendClick implements ActionListener {
                 g.remove(panda);
                 g.remove(leave);
 
-                g.add(MainGame.food);
-                g.add(MainGame.sleep);
-                g.add(MainGame.friend);
+                g.add(game.food);
+                g.add(game.sleep);
+                g.add(game.friend);
                 g.add(penguin);
                 g.add(game.hungryPoints);
                 g.add(game.happyPoints);
