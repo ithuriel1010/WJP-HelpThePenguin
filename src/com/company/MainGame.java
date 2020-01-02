@@ -12,8 +12,8 @@ public class MainGame implements ActionListener {
     public int hungry = 500;
     public int happy = 500;
     public int eatenFood = 0;
-    public static JTextArea hungryPoints;
-    public static JTextArea happyPoints;
+    public JTextArea hungryPoints;
+    public JTextArea happyPoints;
     public static boolean isWithFriend=false;
     public static JButton food = new JButton();
     public static JButton sleep = new JButton();

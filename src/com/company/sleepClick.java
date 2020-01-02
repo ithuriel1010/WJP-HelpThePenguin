@@ -111,11 +111,11 @@ public class sleepClick implements ActionListener {
                     sleepinfo.setText("Wpisz poprawną wartość");
                 }
 
-                MainGame.hungryPoints.setText("Health: "+ String.valueOf(game.hungry));
-                MainGame.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
+                game.hungryPoints.setText("Health: "+ String.valueOf(game.hungry));
+                game.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
 
-                g.add(MainGame.hungryPoints);
-                g.add(MainGame.happyPoints);
+                g.add(game.hungryPoints);
+                g.add(game.happyPoints);
 
                 allSleepInfo.setText(Subtitles.sleepInfo2);
                 allSleepInfo.setVisible(true);

@@ -61,8 +61,8 @@ public class friendClick implements ActionListener {
                 g.add(MainGame.sleep);
                 g.add(MainGame.friend);
                 g.add(penguin);
-                g.add(MainGame.hungryPoints);
-                g.add(MainGame.happyPoints);
+                g.add(game.hungryPoints);
+                g.add(game.happyPoints);
                 g.setVisible(true);
 
 
@@ -84,7 +84,7 @@ public class friendClick implements ActionListener {
 
 
         game.happy+=500;
-        MainGame.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
+        game.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
         info.add(friendInfo);
 
         Font font = friendInfo.getFont();
@@ -95,8 +95,8 @@ public class friendClick implements ActionListener {
 
         g.add(penguin);
         g.add(panda);
-        g.add(MainGame.happyPoints);
-        g.add(MainGame.hungryPoints);
+        g.add(game.happyPoints);
+        g.add(game.hungryPoints);
         g.add(leave);
         g.add(info);
 

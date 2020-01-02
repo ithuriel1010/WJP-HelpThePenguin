@@ -175,11 +175,11 @@ public class SelectFoodClick implements ActionListener {
         }
 
 
-        MainGame.hungryPoints.setText("Health: "+ String.valueOf(game2.hungry));
-        MainGame.happyPoints.setText("Mood: "+ String.valueOf(game2.happy));
+        game2.hungryPoints.setText("Health: "+ String.valueOf(game2.hungry));
+        game2.happyPoints.setText("Mood: "+ String.valueOf(game2.happy));
 
-        game.add(MainGame.hungryPoints);
-        game.add(MainGame.happyPoints);
+        game.add(game2.hungryPoints);
+        game.add(game2.happyPoints);
 
     }
 }
