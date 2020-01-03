@@ -13,7 +13,7 @@ public class PenguinClick implements ActionListener {
 
     public PenguinClick(Window gameWindow, MainGame game)
     {
-        gameWindow = gameWindow;
+        this.gameWindow = gameWindow;
         hugInfo.setEditable(false);
         hugInfo.setOpaque(false);
         hugInfo.setText(Subtitles.hugInfo);
@@ -54,19 +54,14 @@ public class PenguinClick implements ActionListener {
         {
             if(penguin_original_with_friend==true)
             {
-                //hugInfo.setVisible(true);
                 w.ButtonImage(b,"./coolPenguin2.png",350,350,false);
                 penguin_original_with_friend=false;
             }
             else if (penguin_original_with_friend==false){
-                //hugInfo.setVisible(false);
                 w.ButtonImage(b, "./veryHappy2.png", 350,350, false);
                 penguin_original_with_friend = true;
             }
-            //hugInfo.setVisible(true);
-            //gra2.add(hugInfo);
             gameWindow.setVisible(true);
         }
-
     }
 }

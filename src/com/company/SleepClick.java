@@ -8,15 +8,12 @@ import java.awt.event.ActionListener;
 
 public class SleepClick implements ActionListener {
     public Window gameWindow;
-    //public Window w;
     public JButton penguin2;
     public JTextArea healthInfo;
     private MainGame game;
 
-
     public SleepClick(Window gameWindow, JButton penguin, MainGame game) {
         this.gameWindow = gameWindow;
-        //w = new Window();
         penguin2 = penguin;
         this.game=game;
     }
@@ -39,7 +36,6 @@ public class SleepClick implements ActionListener {
         JPanel sleepTime = new TransparentPanel();
         sleepTime.setBounds(0, 0, 500, 300);
         sleepTime.setOpaque(false);
-        //sleepTime.setLocation(new Point(500,200));
         sleepTime.setBackground(new Color(211,211,211,125));
 
         JTextArea info = new JTextArea();
@@ -77,18 +73,14 @@ public class SleepClick implements ActionListener {
                 int iloscSnui;
                 gameWindow.ButtonImage(penguin2, "./SleepingPenguin2.png", 500, 275, false);
 
-
                 try {
                     iloscSnui = Integer.parseInt(iloscSnu);
-
 
                     if (iloscSnui < 8) {
                         sleepinfo.setText(Subtitles.tooLittleSleep);
                         game.happy-=100;
                         game.health -=100;
                         NotEnoughSleep();
-//                        healthInfo.setVisible(true);
-//                        sleepTime.add(healthInfo);
 
                     } else if (iloscSnui >= 8 && iloscSnui <= 10) {
                         sleepinfo.setText(Subtitles.enoughSleep);
@@ -116,10 +108,6 @@ public class SleepClick implements ActionListener {
                 allSleepInfo.setVisible(true);
                 allSleepInfo.setLocation(10, 200);
 
-
-
-
-
                 rozumiem.setVisible(true);
             }
         });
@@ -134,8 +122,6 @@ public class SleepClick implements ActionListener {
                 gameWindow.remove(sleepTime);
             }
         });
-
-
 
         sleepTime.add(info);
         sleepTime.add(time);
@@ -155,6 +141,5 @@ public class SleepClick implements ActionListener {
         healthInfo.setText(Subtitles.notEnoughSleepInfo);
         healthInfo.setVisible(true);
         gameWindow.setVisible(true);
-
     }
 }

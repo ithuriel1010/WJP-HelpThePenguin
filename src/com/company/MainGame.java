@@ -39,8 +39,6 @@ public class MainGame implements ActionListener {
         time.setGame(this);
         t.start();
 
-//        time.TimeFunction1();
-
         try
         {
             gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
@@ -79,15 +77,12 @@ public class MainGame implements ActionListener {
         healthPoints.setForeground(Color.white);
         happyPoints.setForeground(Color.white);
 
-
-
         gameWindow.add(food);
         gameWindow.add(sleep);
         gameWindow.add(friend);
         gameWindow.add(penguin);
         gameWindow.add(healthPoints);
         gameWindow.add(happyPoints);
-
     }
 
     public void TimePassed()
@@ -100,6 +95,5 @@ public class MainGame implements ActionListener {
 
         gameWindow.add(healthPoints);
         gameWindow.add(happyPoints);
-
     }
 }

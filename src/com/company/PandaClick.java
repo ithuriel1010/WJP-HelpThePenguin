@@ -28,8 +28,5 @@ public class PandaClick implements ActionListener {
         }
 
         gameWindow.setVisible(true);
-
     }
-
-
 }

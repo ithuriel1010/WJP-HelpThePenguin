@@ -15,7 +15,6 @@ public class FriendClick implements ActionListener {
     public JButton leave = new JButton();
     public MainGame game;
 
-
     public FriendClick(Window gameWindow, JButton penguin, MainGame game) {
         this.gameWindow = gameWindow;
         this.penguin=penguin;
@@ -64,9 +63,6 @@ public class FriendClick implements ActionListener {
                 gameWindow.add(game.healthPoints);
                 gameWindow.add(game.happyPoints);
                 gameWindow.setVisible(true);
-
-
-
             }
         });
 
@@ -76,12 +72,9 @@ public class FriendClick implements ActionListener {
 
         JTextArea friendInfo = new JTextArea();
         friendInfo.setText(Subtitles.friendInfo);
-        //friendInfo.setLocation(1000,200);
-        //friendInfo.setBackground(Color.PINK);
         friendInfo.setForeground(Color.white);
         friendInfo.setOpaque(false);
         friendInfo.setVisible(true);
-
 
         game.happy+=500;
         game.happyPoints.setText("Mood: "+ String.valueOf(game.happy));

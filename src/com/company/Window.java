@@ -6,8 +6,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-import static javax.print.attribute.standard.MediaSizeName.C;
-
 public class Window extends JFrame {
 
     BufferedImage bimg;
@@ -20,11 +18,9 @@ public class Window extends JFrame {
         setResizable(false);
         setSize(width2,height2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
     Window(){}
-
 
     public void ButtonImage(JButton b, String file, int layoutX, int layoutY, boolean ramka)
     {
@@ -46,7 +42,6 @@ public class Window extends JFrame {
         b.setBorderPainted(ramka);
         b.setLocation(new Point(layoutX,layoutY));
         b.setVisible(true);
-
     }
 
     public String GetFromFile(String file)
@@ -70,9 +65,6 @@ public class Window extends JFrame {
         {
             e.printStackTrace();
         }
-
         return fileAsString;
     }
-
-
 }

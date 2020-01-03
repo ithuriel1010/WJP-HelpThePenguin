@@ -2,42 +2,8 @@ package com.company;
 
 public class TimeManagement implements Runnable {
 
-    public long startTime;
-    public long feedTime;
-    //public long timefromlastmeal;
-    //public double timefromlastmealseconds;
-
     private FoodClick food;
     private MainGame game;
-
-
-
-
-    //public void TimeFunction1()
-    {
-        startTime=System.currentTimeMillis();
-    }
-
-//    public void TimeFunction2()
-//    {
-//        feedTime=System.currentTimeMillis();
-//    }
-//
-////    public void TimeFromLastMeal()
-////    {
-////        if(feedTime==0)
-////        {
-////            return;
-////        }
-////        timefromlastmeal=System.currentTimeMillis()-feedTime;
-////        timefromlastmealseconds=timefromlastmeal/1000.0;
-////
-////        if(timefromlastmealseconds>=30.0)
-////        {
-////            //System.out.println("kkkkkkkkkkkkkkkkkkkkkkkk");
-////            food.PenguinCanEat();
-////        }
-////    }
 
     public void setFood(FoodClick food) {
         this.food = food;
@@ -53,21 +19,17 @@ public class TimeManagement implements Runnable {
         {
             try{
                 Thread.sleep(30000);
-            } catch (Exception e)
-            {
-
             }
+            catch (Exception e)
+            { }
             if(food != null) {
                 food.PenguinCanEat();
-
             }
 
             if(game != null)
             {
                 game.TimePassed();
-
             }
-
         }
     }
 }

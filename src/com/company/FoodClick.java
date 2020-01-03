@@ -8,9 +8,7 @@ import java.awt.event.ActionListener;
 public class FoodClick implements ActionListener {
 
     public Window g;
-    public Window w;
     public JButton penguin;
-    //public JPanel foods = new JPanel();
     final JPanel foods = new TransparentPanel();
     public  JTextArea info4 = new JTextArea();
     public JButton pizza;
@@ -28,7 +26,6 @@ public class FoodClick implements ActionListener {
 
     public FoodClick(Window gameWindow, JButton penguin, TimeManagement time, MainGame game) {
         g = gameWindow;
-        w = new Window();
         this.time=time;
         this.time.setFood(this);
         this.penguin=penguin;
@@ -37,15 +34,8 @@ public class FoodClick implements ActionListener {
         this.game=game;
     }
 
-    public FoodClick() {
-
-    }
-
-
     public void actionPerformed(ActionEvent e)
     {
-//        time.TimeFromLastMeal();
-        //JPanel foods = new JPanel();
         if(game.eatenFood>=1501)
         {
             TooMuchFood();
@@ -58,9 +48,6 @@ public class FoodClick implements ActionListener {
         }
         foods.setVisible(true);
         g.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
-
-        // ./plik.png
-        // ./katalog/plik.png
 
     }
 
@@ -78,10 +65,7 @@ public class FoodClick implements ActionListener {
 
     private void createFoods() {
         foods.setBounds(0, 0, 500, 550);
-        //foods.setOpaque(true);
         foods.setBackground(new Color(211,211,211,125));
-        //JPanel p2=new JPanel();
-        //foods.setBackground(Color.LIGHT_GRAY);
 
         JTextArea info = new JTextArea();
         info.setText(Subtitles.foodInfo1);
@@ -100,8 +84,6 @@ public class FoodClick implements ActionListener {
         info4.setOpaque(false);
         info4.setVisible(false);
 
-
-
         Font font = info.getFont();
         float size = font.getSize() + 2.0f;
         float size2 = font.getSize() + 4.0f;
@@ -112,19 +94,15 @@ public class FoodClick implements ActionListener {
         info4.setFont(font.deriveFont(size2));
         info4.setForeground(Color.RED);
 
-
         JButton ok = new JButton();
         ok.setText("Zakończ karmienie");
         ok.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 foods.setVisible(false);
-                //foods.remove(info4);
-                //g.remove(foods);
                 g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
             }
         });
-
 
         pizza = new JButton();
         chicken = new JButton();
@@ -135,7 +113,6 @@ public class FoodClick implements ActionListener {
         dinner = new JButton();
         fish = new JButton();
         salad = new JButton();
-
 
         g.ButtonImage(chicken, "./chicken.png",0,100,false);
         g.ButtonImage(pizza, "./pizza.png",110,0,false);
@@ -157,7 +134,6 @@ public class FoodClick implements ActionListener {
         fish.addActionListener(new SelectFoodClick(g,this, time, game));
         salad.addActionListener(new SelectFoodClick(g,this, time, game));
 
-
         foods.add(info);
         foods.add(info2);
         foods.add(chicken);
@@ -173,8 +149,6 @@ public class FoodClick implements ActionListener {
         foods.add(ok);
         foods.add(info4);
 
-
-
         foods.setVisible(true);
 
         g.add(foods);
@@ -183,17 +157,12 @@ public class FoodClick implements ActionListener {
     public void TooMuchFood()
     {
         info4.setVisible(true);
-
         foods.add(info4);
         g.add(foods);
-        //g.setVisible(true);
     }
 
     public void PenguinCanEat()
     {
-//        info4.setVisible(false);
-//        foods.add(info4);
-//        g.add(foods);
         game.eatenFood-=100;
         if(game.eatenFood<=0)
         {
