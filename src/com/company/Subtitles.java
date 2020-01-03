@@ -1,8 +1,8 @@
 package com.company;
 
-public class Subtitles {
+public class Subtitles {    //Klasa przechowująca wszystkie napisy
 
-    public static String firstInstruction="Witaj w grze 'Help the Penguin'! \nZasady gry nie są trudne: Musisz opiekować się pingwinkiem co nauczy cię troche \no zdrowiu psychicznym i co zrobić aby było ono jak najlepsze. \nPingwina możesz karmić, kłaść spać oraz wysyłać go na spotkania z przyjaciółmi. \nPamiętaj jednak że jedzenie i sen powinny być w zdrowej ilości! Monitoruj nastrój oraz zdrowie \npingwinka! Wzrastają one kiedy zrobisz coś dobrze i spadają kiedy twoja decyzja nie była najzdrowsza! \nGrając zobaczysz informacje o zdrowiu i o tym jak o nie dbać, pamiętaj jednak że to tylko gra! \nJeśli masz problem lub źle się czujesz porozmawiaj z kimś dorosłym! \nPóki co jednak życzę ci wspaniałej gry z pingwinkiem!!!";
+    public static String firstInstruction="Witaj w grze 'Help the Penguin'! \nZasady gry nie są trudne: Musisz opiekować się pingwinkiem co nauczy cię troche \no zdrowiu psychicznym i co zrobić aby było ono jak najlepsze. \nPingwina możesz karmić, kłaść spać oraz wysyłać go na spotkania z przyjaciółmi. \nPamiętaj jednak że jedzenie i sen powinny być w zdrowej ilości! Monitoruj nastrój oraz \nzdrowie pingwinka! Wzrastają one kiedy zrobisz coś dobrze i spadają kiedy \ntwoja decyzja nie była najzdrowsza! \nGrając zobaczysz informacje o zdrowiu i o tym jak o nie dbać, pamiętaj jednak że \nto tylko gra! Jeśli masz problem lub źle się czujesz porozmawiaj z kimś dorosłym! \nPóki co jednak życzę ci wspaniałej gry z pingwinkiem!!!";
     public static String foodInfo1="Wybierz co ma zjeść pingwinek!";
     public static String foodInfo2="Pamiętaj że istotne jest co i ile jesz!";
     public static String foodInfo3="Zdrowa dieta jest bardzo ważna. Pamiętaj że mimo iż niektóre potrawy \nsą smaczne i poprawiją nam humor, nie zawsze są one zdrowe \nw nadmiernej ilości!";

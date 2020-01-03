@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class FoodClick implements ActionListener {
 
-    public Window g;
+    public Window gameWindow;
     public JButton penguin;
     final JPanel foods = new TransparentPanel();
     public  JTextArea info4 = new JTextArea();
@@ -25,18 +25,29 @@ public class FoodClick implements ActionListener {
 
 
     public FoodClick(Window gameWindow, JButton penguin, TimeManagement time, MainGame game) {
-        g = gameWindow;
+        this.gameWindow = gameWindow;
         this.time=time;
         this.time.setFood(this);
         this.penguin=penguin;
+        this.game=game;
         createFoods();
         foods.setVisible(false);
-        this.game=game;
+
     }
 
     public void actionPerformed(ActionEvent e)
     {
-        if(game.eatenFood>=1501)
+        if(game.sleepMenuOpen==false)   //Sprawdzenie czy okno snu nie jest otwarte i jego ewentualne zamykanie
+        {
+            game.foodMenuOpen=true;
+        }
+        else if(game.sleepMenuOpen==true)
+        {
+            game.sleepClick.ZakonczSpanie();
+            game.foodMenuOpen=true;
+        }
+
+        if(game.eatenFood>=1501)            //Sprawdzenie czy ilość podanych pingwinowi kalorii nie jest za duża i wywoływanie odpowiednich metod jeśli tak
         {
             TooMuchFood();
         }
@@ -44,14 +55,15 @@ public class FoodClick implements ActionListener {
         {
             info4.setVisible(false);
             foods.add(info4);
-            g.add(foods);
+            gameWindow.add(foods);
         }
+
         foods.setVisible(true);
-        g.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
+        gameWindow.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
 
     }
 
-    private class TransparentPanel extends JPanel {
+    private class TransparentPanel extends JPanel {         //Tworzenie pół-przezroczystego panelu
         {
             setOpaque(false);
         }
@@ -63,7 +75,7 @@ public class FoodClick implements ActionListener {
         }
     }
 
-    private void createFoods() {
+    private void createFoods() {                                //Tworzenie panelu foods z instrukcjami i guzikami jedzenia
         foods.setBounds(0, 0, 500, 550);
         foods.setBackground(new Color(211,211,211,125));
 
@@ -94,13 +106,12 @@ public class FoodClick implements ActionListener {
         info4.setFont(font.deriveFont(size2));
         info4.setForeground(Color.RED);
 
-        JButton ok = new JButton();
-        ok.setText("Zakończ karmienie");
-        ok.addActionListener(new ActionListener() {
+        JButton endOfFeeding = new JButton();
+        endOfFeeding.setText("Zakończ karmienie");
+        endOfFeeding.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                foods.setVisible(false);
-                g.ButtonImage(penguin,"./Pengiun2.png",500,275,false);
+                ZakonczKarmienie();
             }
         });
 
@@ -114,25 +125,26 @@ public class FoodClick implements ActionListener {
         fish = new JButton();
         salad = new JButton();
 
-        g.ButtonImage(chicken, "./chicken.png",0,100,false);
-        g.ButtonImage(pizza, "./pizza.png",110,0,false);
-        g.ButtonImage(sandwich, "./sandwich.png",220,0,false);
-        g.ButtonImage(pancake, "./pancakes.png",0,110,false);
-        g.ButtonImage(chocolate, "./chocolate.png",110,110,false);
-        g.ButtonImage(nuggets, "./nuggets.png",220,110,false);
-        g.ButtonImage(dinner, "./dinner.png",0,2200,false);
-        g.ButtonImage(fish, "./fish.png",0,2200,false);
-        g.ButtonImage(salad, "./salad.png",0,2200,false);
+        //Przypisanie obrazka i miejsca każdego guzika jedzenia
+        gameWindow.ButtonImage(chicken, "./chicken.png",0,100,false);
+        gameWindow.ButtonImage(pizza, "./pizza.png",110,0,false);
+        gameWindow.ButtonImage(sandwich, "./sandwich.png",220,0,false);
+        gameWindow.ButtonImage(pancake, "./pancakes.png",0,110,false);
+        gameWindow.ButtonImage(chocolate, "./chocolate.png",110,110,false);
+        gameWindow.ButtonImage(nuggets, "./nuggets.png",220,110,false);
+        gameWindow.ButtonImage(dinner, "./dinner.png",0,2200,false);
+        gameWindow.ButtonImage(fish, "./fish.png",0,2200,false);
+        gameWindow.ButtonImage(salad, "./salad.png",0,2200,false);
 
-        chicken.addActionListener(new SelectFoodClick(g, this, time, game));
-        pizza.addActionListener(new SelectFoodClick(g, this, time, game));
-        sandwich.addActionListener(new SelectFoodClick(g, this, time, game));
-        pancake.addActionListener(new SelectFoodClick(g, this, time, game));
-        chocolate.addActionListener(new SelectFoodClick(g, this, time, game));
-        nuggets.addActionListener(new SelectFoodClick(g, this, time, game));
-        dinner.addActionListener(new SelectFoodClick(g, this, time, game));
-        fish.addActionListener(new SelectFoodClick(g,this, time, game));
-        salad.addActionListener(new SelectFoodClick(g,this, time, game));
+        chicken.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        pizza.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        sandwich.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        pancake.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        chocolate.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        nuggets.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        dinner.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
+        fish.addActionListener(new SelectFoodClick(gameWindow,this, time, game));
+        salad.addActionListener(new SelectFoodClick(gameWindow,this, time, game));
 
         foods.add(info);
         foods.add(info2);
@@ -146,22 +158,29 @@ public class FoodClick implements ActionListener {
         foods.add(fish);
         foods.add(salad);
         foods.add(info3);
-        foods.add(ok);
+        foods.add(endOfFeeding);
         foods.add(info4);
 
         foods.setVisible(true);
 
-        g.add(foods);
+        gameWindow.add(foods);
     }
 
-    public void TooMuchFood()
+    public void ZakonczKarmienie()      //Metoda zamykająca panel jedzenia
+    {
+        game.foodMenuOpen=false;
+        foods.setVisible(false);
+        gameWindow.ButtonImage(penguin,"./Pengiun2.png",315,275,false);
+    }
+
+    public void TooMuchFood()           //Metoda wyświetlająca ostrzeżenie o przekarmieniu pingwinka
     {
         info4.setVisible(true);
         foods.add(info4);
-        g.add(foods);
+        gameWindow.add(foods);
     }
 
-    public void PenguinCanEat()
+    public void PenguinCanEat()         //Metoda zmniejszająca ilość zjedzonego przez pingwinka jedzenia (Wywołowana co 30 sekund w klasie TimeManagement)
     {
         game.eatenFood-=100;
         if(game.eatenFood<=0)

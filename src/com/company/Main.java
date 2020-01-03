@@ -14,16 +14,12 @@ public class Main {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
-        System.out.println(width);
-        System.out.println(height);
 
-        Main m = new Main();
-
-        Window game = new Window("Help the Penguin",width, height, width/2, height/2 );
+        Window gameWindow = new Window("Help the Penguin",width, height, width/2, height/2 );     //Tworzenie okna gry
 
         try
         {
-            game.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));       //Ustawienie tła
         }
         catch(Exception e)
         {
@@ -34,21 +30,22 @@ public class Main {
         goToTheGame = new JButton();
 
         instruction.setText(Subtitles.firstInstruction);
+        instruction.setEditable(false);
         Font font = instruction.getFont();
         float size = font.getSize() + 20.0f;
         instruction.setFont( font.deriveFont(size) );
         instruction.setForeground(Color.white);
         instruction.setOpaque(false);
-        instruction.setBounds(70,100,1500,500);
+        instruction.setBounds(20,80,1500,500);
         instruction.setVisible(true);
         goToTheGame.setVisible(true);
 
-        goToTheGame.addActionListener(new MainGame(game,instruction,goToTheGame));
-        game.ButtonImage(goToTheGame, "./Rozpocznij.png",100,550,true);
+        goToTheGame.addActionListener(new MainGame(gameWindow,instruction,goToTheGame));
+        gameWindow.ButtonImage(goToTheGame, "./Rozpocznij.png",100,550,true);
 
-        game.add(instruction);
-        game.add(goToTheGame);
-        game.setVisible(true);
+        gameWindow.add(instruction);
+        gameWindow.add(goToTheGame);
+        gameWindow.setVisible(true);
     }
 
 }

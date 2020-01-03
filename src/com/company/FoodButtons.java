@@ -13,6 +13,8 @@ public class FoodButtons {
         this.healthPoints=healthPoints;
     }
 
+    //Przypisywanie każdemu jedzeniu wartości, które będą dodawane/odejmowane przy ich kliknięciu
+
     public static FoodButtons chicken = new FoodButtons(239,100, 100);
     public static FoodButtons pizza = new FoodButtons(300,100,50);
     public static FoodButtons sandwich = new FoodButtons(200,100, 100);

@@ -10,6 +10,7 @@ public class SleepClick implements ActionListener {
     public Window gameWindow;
     public JButton penguin2;
     public JTextArea healthInfo;
+    public JPanel sleepTime;
     private MainGame game;
 
     public SleepClick(Window gameWindow, JButton penguin, MainGame game) {
@@ -33,7 +34,23 @@ public class SleepClick implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton b = (JButton) e.getSource();
 
-        JPanel sleepTime = new TransparentPanel();
+        if(game.foodMenuOpen==false)       //Sprawdzenie czy okno jedzenia nie jest otwarte i jego ewentualne zamykanie
+        {
+            CreateSleepPanel();
+            game.sleepMenuOpen=true;
+        }
+        else if(game.foodMenuOpen==true)
+        {
+            game.foodClick.ZakonczKarmienie();
+            CreateSleepPanel();
+            game.sleepMenuOpen=true;
+        }
+
+    }
+
+    public void CreateSleepPanel()              //Tworzenie panelu snu
+    {
+        sleepTime = new TransparentPanel();
         sleepTime.setBounds(0, 0, 500, 300);
         sleepTime.setOpaque(false);
         sleepTime.setBackground(new Color(211,211,211,125));
@@ -71,12 +88,12 @@ public class SleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
-                gameWindow.ButtonImage(penguin2, "./SleepingPenguin2.png", 500, 275, false);
+                gameWindow.ButtonImage(penguin2, "./SleepingPenguin2.png", 280, 285, false);
 
                 try {
                     iloscSnui = Integer.parseInt(iloscSnu);
 
-                    if (iloscSnui < 8) {
+                    if (iloscSnui < 8) {                //Sprawdzana jest wartośc snu i w jakich zakresach się ona mieści - odpowiednia informacja zostaje wtedy wyświetlona
                         sleepinfo.setText(Subtitles.tooLittleSleep);
                         game.happy-=100;
                         game.health -=100;
@@ -116,10 +133,7 @@ public class SleepClick implements ActionListener {
         rozumiem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sleepTime.setVisible(false);
-                //allSleepInfo.setVisible(false);
-                gameWindow.ButtonImage(penguin2, "./Pengiun2.png", 500, 275, false);
-                gameWindow.remove(sleepTime);
+                ZakonczSpanie();
             }
         });
 
@@ -136,7 +150,15 @@ public class SleepClick implements ActionListener {
         gameWindow.setVisible(true);
     }
 
-    public void NotEnoughSleep()
+    public void ZakonczSpanie()             //Metoda zamykająca panel snu
+    {
+        game.sleepMenuOpen=false;
+        sleepTime.setVisible(false);
+        gameWindow.ButtonImage(penguin2, "./Pengiun2.png", 280, 285, false);
+        gameWindow.remove(sleepTime);
+    }
+
+    public void NotEnoughSleep()            //Metoda wyświetlająca informacje o niedoborze snu
     {
         healthInfo.setText(Subtitles.notEnoughSleepInfo);
         healthInfo.setVisible(true);

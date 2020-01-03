@@ -18,7 +18,7 @@ public class TimeManagement implements Runnable {
         while(true)
         {
             try{
-                Thread.sleep(30000);
+                Thread.sleep(30000);        //Co 30 sekund wywoływana jest metoda PenguinCanEat i TimePassed
             }
             catch (Exception e)
             { }

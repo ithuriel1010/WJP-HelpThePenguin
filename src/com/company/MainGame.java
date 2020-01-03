@@ -9,12 +9,14 @@ import java.io.File;
 
 public class MainGame implements ActionListener {
 
-    public int health = 500;
-    public int happy = 500;
-    public int eatenFood = 0;
+    public int health = 500;        //Początkowa wartość zdrowia
+    public int happy = 500;         //Początkowa wartość nastroju
+    public int eatenFood = 0;       //Początkowa wartość zjedzenego jedzenia
     public JTextArea healthPoints;
     public JTextArea happyPoints;
     public boolean isWithFriend=false;
+    public boolean foodMenuOpen=false;
+    public boolean sleepMenuOpen=false;
     public JButton food = new JButton();
     public JButton sleep = new JButton();
     public JButton friend = new JButton();
@@ -23,6 +25,8 @@ public class MainGame implements ActionListener {
     public JTextArea instruction;
     public JButton goToTheGame;
     public TimeManagement time = new TimeManagement();
+    public FoodClick foodClick;
+    public SleepClick sleepClick;
 
     public MainGame(Window gameWindow, JTextArea instruction, JButton goToTheGame) {
         this.gameWindow = gameWindow;
@@ -32,10 +36,11 @@ public class MainGame implements ActionListener {
 
     public void actionPerformed(ActionEvent e)
     {
+        //Po kliknięciu guzika "Rozpocznij grę" usuwane są instrukcje i zaczyna się gra:
         gameWindow.remove(instruction);
         gameWindow.remove(goToTheGame);
 
-        Thread t = new Thread(time);
+        Thread t = new Thread(time);        //Zaczęcie nowego thread aby gra była zależna od czasu
         time.setGame(this);
         t.start();
 
@@ -48,24 +53,29 @@ public class MainGame implements ActionListener {
             System.out.println("Błąd pliku backgroung");
         }
 
-        gameWindow.ButtonImage(food, "./Eggs.png",1300,0,true);
-        gameWindow.ButtonImage(sleep,"./SleepCloud.png",1300,220,true);
-        gameWindow.ButtonImage(friend,"./Panda2.png",1300,440,true);
-        gameWindow.ButtonImage(penguin,"./Pengiun2.png",480,285,false);
+        gameWindow.ButtonImage(food, "./Eggs.png",1050,0,true);
+        gameWindow.ButtonImage(sleep,"./SleepCloud.png",1050,220,true);
+        gameWindow.ButtonImage(friend,"./Panda2.png",1050,440,true);
+        gameWindow.ButtonImage(penguin,"./Pengiun2.png",280,285,false);
 
         penguin.addActionListener(new PenguinClick(gameWindow, this));
-        food.addActionListener(new FoodClick(gameWindow, penguin, time, this));
-        sleep.addActionListener(new SleepClick(gameWindow, penguin,this));
+
+        foodClick = new FoodClick(gameWindow, penguin, time, this);
+        food.addActionListener(foodClick);
+
+        sleepClick=new SleepClick(gameWindow, penguin,this);
+        sleep.addActionListener(sleepClick);
+
         friend.addActionListener(new FriendClick(gameWindow, penguin,this));
 
         healthPoints = new JTextArea();
-        healthPoints.setText("Health: "+ String.valueOf(health));
+        healthPoints.setText("Health: "+ String.valueOf(health));       //Wyświetlenie wartości zdrowia pingwina
         healthPoints.setBounds(550,50,500,50);
         healthPoints.setOpaque(false);
         healthPoints.setVisible(true);
 
         happyPoints = new JTextArea();
-        happyPoints.setText("Mood: "+ String.valueOf(happy));
+        happyPoints.setText("Mood: "+ String.valueOf(happy));           //Wyświetlenie wartości humoru pingwina
         happyPoints.setBounds(550,75,500,50);
         happyPoints.setOpaque(false);
         happyPoints.setVisible(true);
@@ -85,7 +95,7 @@ public class MainGame implements ActionListener {
         gameWindow.add(happyPoints);
     }
 
-    public void TimePassed()
+    public void TimePassed()                //Metoda zmniejszająca wartość zdrowia i humoru pingwinka (Wywołowana co 30 sekund w klasie TimeManagement)
     {
         health -=25;
         happy-=25;

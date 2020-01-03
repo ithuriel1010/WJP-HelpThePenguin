@@ -16,7 +16,7 @@ public class SelectFoodClick implements ActionListener {
         this.gameWindow =gameWindow;
         this.food = food;
         this.time=time;
-        this.game =game;
+        this.game = game;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -25,11 +25,11 @@ public class SelectFoodClick implements ActionListener {
         int foodConsumed=0;
         int foodConsumed2=0;
 
-        if(game.eatenFood<=1500)
+        if(game.eatenFood<=1500)                //Sprawdzenie ilości zjedzonego jedzenia - jeśli jest ona za duża to każde jedzenie zmniejsza humor i zdrowie pingwinka zamiast je podnosić
         {
             if (b==food.pizza)
             {
-                foodConsumed+=FoodButtons.pizza.healthPoints;
+                foodConsumed+=FoodButtons.pizza.healthPoints;       //Każde jedzenie ma swoje wartości które są dodawane/odejmowane po ich kliknięciu
                 game.eatenFood+=FoodButtons.pizza.calories;
                 game.happy+=FoodButtons.pizza.happyPoints;
             }
