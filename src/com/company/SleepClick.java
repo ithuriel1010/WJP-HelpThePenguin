@@ -115,8 +115,8 @@ public class SleepClick implements ActionListener {
                     sleepinfo.setText("Wpisz poprawną wartość");
                 }
 
-                game.healthPoints.setText("Health: "+ String.valueOf(game.health));
-                game.happyPoints.setText("Mood: "+ String.valueOf(game.happy));
+                game.healthPoints.setText("Health: "+ game.health);
+                game.happyPoints.setText("Mood: "+ game.happy);
 
                 gameWindow.add(game.healthPoints);
                 gameWindow.add(game.happyPoints);
@@ -158,7 +158,7 @@ public class SleepClick implements ActionListener {
         gameWindow.remove(sleepTime);
     }
 
-    public void NotEnoughSleep()            //Metoda wyświetlająca informacje o niedoborze snu
+    private void NotEnoughSleep()            //Metoda wyświetlająca informacje o niedoborze snu
     {
         healthInfo.setText(Subtitles.notEnoughSleepInfo);
         healthInfo.setVisible(true);
