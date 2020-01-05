@@ -26,27 +26,27 @@ public class FriendClick implements ActionListener {
         game.isWithFriend=true;
         try
         {
-            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./Cartoon_Forest_BG_02.png")))));     //Zmiana tła
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./res/Cartoon_Forest_BG_02.png")))));     //Zmiana tła
         }
         catch(Exception m)
         {
             System.out.println("Błąd pliku backgroung");
         }
 
-        gameWindow.ButtonImage(penguin,"./veryHappy2.png",350,310,false);
-        gameWindow.ButtonImage(panda,"./HappyPanda2.png",650,310,false);    //Dodanie guzika pandy
+        gameWindow.ButtonImage(penguin,"./res/veryHappy2.png",350,310,false);
+        gameWindow.ButtonImage(panda,"./res/HappyPanda2.png",650,310,false);    //Dodanie guzika pandy
 
-        gameWindow.ButtonImage(leave,"./Lave.png",0,0,true);
+        gameWindow.ButtonImage(leave,"./res/Lave.png",0,0,true);
         leave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {        //Po naciśnięciu guzika leave panda znika i gra wraca do orgyginalnego widoku
 
                 game.isWithFriend=false;
-                gameWindow.ButtonImage(penguin,"./Pengiun2.png",280,285,false);
+                gameWindow.ButtonImage(penguin,"./res/Pengiun2.png",280,285,false);
 
                 try
                 {
-                    gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
+                    gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./res/snowy01_preview-01.png")))));
                 }
                 catch(Exception m)
                 {

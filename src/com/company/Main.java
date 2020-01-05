@@ -19,7 +19,7 @@ public class Main {
 
         try
         {
-            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));       //Ustawienie tła
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./res/snowy01_preview-01.png")))));       //Ustawienie tła
         }
         catch(Exception e)
         {
@@ -41,7 +41,7 @@ public class Main {
         goToTheGame.setVisible(true);
 
         goToTheGame.addActionListener(new MainGame(gameWindow,instruction,goToTheGame));
-        gameWindow.ButtonImage(goToTheGame, "./Rozpocznij.png",100,550,true);
+        gameWindow.ButtonImage(goToTheGame, "./res/Rozpocznij.png",100,550,true);
 
         gameWindow.add(instruction);
         gameWindow.add(goToTheGame);

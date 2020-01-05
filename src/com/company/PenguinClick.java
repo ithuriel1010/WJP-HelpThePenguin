@@ -37,14 +37,14 @@ public class PenguinClick implements ActionListener {
         {
             if(penguin_original==true)          //Sprawdzenie który obrazek jest aktualnie przypisany do pingwina i jego zmiana na drugi
             {
-                w.ButtonImage(b,"./CutePenguin3.png",315,300,false);
+                w.ButtonImage(b,"./res/CutePenguin3.png",315,300,false);
                 gameWindow.setVisible(true);
                 hugInfo.setVisible(true);          //Wyświetlenie informacji o przytulaniu
                 penguin_original=false;
             }
             else if (penguin_original==false){
                 hugInfo.setVisible(false);
-                w.ButtonImage(b, "./Pengiun2.png", 280, 285, false);
+                w.ButtonImage(b, "./res/Pengiun2.png", 280, 285, false);
                 penguin_original = true;
             }
             gameWindow.add(hugInfo);
@@ -54,11 +54,11 @@ public class PenguinClick implements ActionListener {
         {
             if(penguin_original_with_friend==true)
             {
-                w.ButtonImage(b,"./coolPenguin2.png",350,310,false);
+                w.ButtonImage(b,"./res/coolPenguin2.png",350,310,false);
                 penguin_original_with_friend=false;
             }
             else if (penguin_original_with_friend==false){
-                w.ButtonImage(b, "./veryHappy2.png", 350,310, false);
+                w.ButtonImage(b, "./res/veryHappy2.png", 350,310, false);
                 penguin_original_with_friend = true;
             }
             gameWindow.setVisible(true);

@@ -46,17 +46,17 @@ public class MainGame implements ActionListener {
 
         try
         {
-            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./snowy01_preview-01.png")))));
+            gameWindow.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./res/snowy01_preview-01.png")))));
         }
         catch(Exception h)
         {
             System.out.println("Błąd pliku backgroung");
         }
 
-        gameWindow.ButtonImage(food, "./Eggs.png",1050,0,true);
-        gameWindow.ButtonImage(sleep,"./SleepCloud.png",1050,220,true);
-        gameWindow.ButtonImage(friend,"./Panda2.png",1050,440,true);
-        gameWindow.ButtonImage(penguin,"./Pengiun2.png",280,285,false);
+        gameWindow.ButtonImage(food, "./res/Eggs.png",1050,0,true);
+        gameWindow.ButtonImage(sleep,"./res/SleepCloud.png",1050,220,true);
+        gameWindow.ButtonImage(friend,"./res/Panda2.png",1050,440,true);
+        gameWindow.ButtonImage(penguin,"./res/Pengiun2.png",280,285,false);
 
         penguin.addActionListener(new PenguinClick(gameWindow, this));
 

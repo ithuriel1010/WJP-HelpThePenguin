@@ -88,7 +88,7 @@ public class SleepClick implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String iloscSnu = time.getText();
                 int iloscSnui;
-                gameWindow.ButtonImage(penguin2, "./SleepingPenguin2.png", 280, 285, false);
+                gameWindow.ButtonImage(penguin2, "./res/SleepingPenguin2.png", 280, 285, false);
 
                 try {
                     iloscSnui = Integer.parseInt(iloscSnu);
@@ -154,7 +154,7 @@ public class SleepClick implements ActionListener {
     {
         game.sleepMenuOpen=false;
         sleepTime.setVisible(false);
-        gameWindow.ButtonImage(penguin2, "./Pengiun2.png", 280, 285, false);
+        gameWindow.ButtonImage(penguin2, "./res/Pengiun2.png", 280, 285, false);
         gameWindow.remove(sleepTime);
     }
 

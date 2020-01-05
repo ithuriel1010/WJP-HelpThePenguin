@@ -59,7 +59,7 @@ public class FoodClick implements ActionListener {
         }
 
         foods.setVisible(true);
-        gameWindow.ButtonImage(penguin,"./eatingPenguin2.png",500,295,false);
+        gameWindow.ButtonImage(penguin,"./res/eatingPenguin2.png",500,295,false);
 
     }
 
@@ -126,15 +126,15 @@ public class FoodClick implements ActionListener {
         salad = new JButton();
 
         //Przypisanie obrazka i miejsca każdego guzika jedzenia
-        gameWindow.ButtonImage(chicken, "./chicken.png",0,100,false);
-        gameWindow.ButtonImage(pizza, "./pizza.png",110,0,false);
-        gameWindow.ButtonImage(sandwich, "./sandwich.png",220,0,false);
-        gameWindow.ButtonImage(pancake, "./pancakes.png",0,110,false);
-        gameWindow.ButtonImage(chocolate, "./chocolate.png",110,110,false);
-        gameWindow.ButtonImage(nuggets, "./nuggets.png",220,110,false);
-        gameWindow.ButtonImage(dinner, "./dinner.png",0,2200,false);
-        gameWindow.ButtonImage(fish, "./fish.png",0,2200,false);
-        gameWindow.ButtonImage(salad, "./salad.png",0,2200,false);
+        gameWindow.ButtonImage(chicken, "./res/chicken.png",0,100,false);
+        gameWindow.ButtonImage(pizza, "./res/pizza.png",110,0,false);
+        gameWindow.ButtonImage(sandwich, "./res/sandwich.png",220,0,false);
+        gameWindow.ButtonImage(pancake, "./res/pancakes.png",0,110,false);
+        gameWindow.ButtonImage(chocolate, "./res/chocolate.png",110,110,false);
+        gameWindow.ButtonImage(nuggets, "./res/nuggets.png",220,110,false);
+        gameWindow.ButtonImage(dinner, "./res/dinner.png",0,2200,false);
+        gameWindow.ButtonImage(fish, "./res/fish.png",0,2200,false);
+        gameWindow.ButtonImage(salad, "./res/salad.png",0,2200,false);
 
         chicken.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
         pizza.addActionListener(new SelectFoodClick(gameWindow, this, time, game));
@@ -170,7 +170,7 @@ public class FoodClick implements ActionListener {
     {
         game.foodMenuOpen=false;
         foods.setVisible(false);
-        gameWindow.ButtonImage(penguin,"./Pengiun2.png",315,275,false);
+        gameWindow.ButtonImage(penguin,"./res/Pengiun2.png",315,275,false);
     }
 
     public void TooMuchFood()           //Metoda wyświetlająca ostrzeżenie o przekarmieniu pingwinka

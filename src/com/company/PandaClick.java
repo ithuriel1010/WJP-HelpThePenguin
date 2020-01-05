@@ -19,11 +19,11 @@ public class PandaClick implements ActionListener {
 
         if (panda_original == true)                                 //Sprawdzenie który obrazek jest aktualnie przypisany do pandy i jego zmiana na drugi
         {
-            w.ButtonImage(b, "./VeryHappyPanda.png", 650,310, false);
+            w.ButtonImage(b, "./res/VeryHappyPanda.png", 650,310, false);
             panda_original = false;
         } else if (panda_original == false)
         {
-            w.ButtonImage(b, "./HappyPanda2.png", 650,310, false);
+            w.ButtonImage(b, "./res/HappyPanda2.png", 650,310, false);
             panda_original = true;
         }
 
